@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="Ivy Fan-Chiang">
+    <meta itemprop="name" content="Ivy Fan-Chiang">
+    <meta itemprop="description" content="">
+    <title>404 - Ivy Fan-Chiang</title>
+    <style>
+        @import url("https://use.typekit.net/rjh1tmg.css");
+    </style>
+    <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
+</head>
+
+<body>
+<div id="navbar">
+    <div id="wrap">
+        <ul class="navbar">
+            <li>
+                <a class="title" href="/">Ivy Fan-Chiang</a>
+            </li>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="/projects">Projects</a>
+            </li>
+            <li style="float: right">
+                <a href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="main">
+    <h1><i class="fas fa-exclamation-triangle"></i> Error 404: Not Found</h1><hr>
+    <p>You seem lost, maybe you should try some of the links available above</p>
+</div>
+
+<div style="height: 70px;"></div>
+<footer>
+    <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='/assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
+    <a href="https://www.thingiverse.com/ivy9909/about" target="_blank"><img src="{{ url_for('static', filename='/assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
+    <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='/assets/envelope-regular.svg') }}" height="32" width="32"></a>
+    <p style="font-size: 12px;">@ 2020 Ivy Fan-Chiang</p>
+</footer>
+</body>
+</html>

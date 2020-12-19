@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="Ivy Fan-Chiang">
+        <meta itemprop="name" content="Ivy Fan-Chiang">
+        <meta itemprop="description" content="">
+        <title>Projects - Ivy Fan-Chiang</title>
+        <style>
+            @import url("https://use.typekit.net/rjh1tmg.css");
+            .column {
+                float: left;
+                padding: 0px 10px;
+                padding-bottom: 20px;
+                flex-basis: 25%;
+            }
+
+            .row {
+                margin: 0 -5px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                padding: 16px;
+                text-align: left;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+                height: 100%;
+            }
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+            @media screen and (max-width: 1200px) {
+                .column{
+                    flex-basis: 33%;
+                }
+            }
+            @media screen and (max-width: 1000px) {
+                .column{
+                    flex-basis: 50%;
+                }
+            }
+            @media screen and (max-width: 650px) {
+                .column{
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+        <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="wrap">
+                <ul class="navbar">
+                    <li>
+                        <a class="title" href="/">Ivy Fan-Chiang</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/projects" class="active">Projects</a>
+                    </li>
+                    <li style="float: right">
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>My Projects</h1><hr>
+            <p>Below you can find some of my programming and modelling projects, attached are links the the project site. Projects marked with the <i class="fas fa-archive"></i> symbol have been archived and no longer worked on</p>
+
+            <div>
+                <b>Filter: </b>
+                <input type="checkbox" id="archived-check" name="archived-check" onclick="show_archived()" checked><label for="archived-check">Show Archived Projects</label>
+            </div><br>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/octoprint-cli.png') }}" alt="octoprint-cli terminal screenshot" style="width:100%;">
+                        <h3>octoprint-cli</h3>
+                        <p>Command line client for OctoPrint 3D printer servers created using python3 and requests</p>
+                        <a href="https://github.com/UserBlackBox/octoprint-cli" class="link-button" target="_blank" title="UserBlackBox/octoprint-cli"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/schedule_bot.png') }}" alt="Schedule Bot screenshot" style="width:100%;">
+                        <h3>Schedule Bot</h3>
+                        <p>Discord bot to keep track of timetable information based off the TDSB 2020 quadmester model</p>
+                        <a href="https://github.com/UserBlackBox/schedule-bot" class="link-button" target="_blank" title="UserBlackBox/schedule-bot"><i class="fab fa-github"></i> Github</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/rofi-i3-keybinds.png') }}" alt="rofi keybind menu" style="width:100%;">
+                        <h3>Rofi i3wm Keybind Menu</h3>
+                        <p>A Rofi menu bash script that displays your i3wm keybinds which can be run with xdotool</p>
+                        <a href="https://github.com/UserBlackBox/rofi-i3-keybinds" class="link-button" target="_blank" title="UserBlackBox/rofi-i3-keybinds"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column archived">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/pysine.png') }}" alt="pybeep terminal" style="width:100%;">
+                        <h3>pybeep <i class="fas fa-archive"></i></h3>
+                        <p>Python alternative to the out of date Linux beep command that uses ALSA instead of pcspkr</p>
+                        <a href="https://github.com/UserBlackBox/pybeep" class="link-button" target="_blank" title="UserBlackBox/pybeep"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column archived">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/ics4u0.png') }}" alt="Virus game screenshot" style="width:100%;">
+                        <h3>Virus Game <i class="fas fa-archive"></i></h3>
+                        <p>Virus infection game created as the final project for the ICS4U0 course using PApplet and JFrame</p>
+                        <a href="https://github.com/UserBlackBox/ICS4U0-ISP" class="link-button" target="_blank" title="UserBlackBox/ICS4U0-ISP"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/sorting.png') }}" alt="sorting demonstration screenshot" style="width:100%;">
+                        <h3>Sorting Demonstrations</h3>
+                        <p>Demonstration programs of various sorting algorithms with explanations created in Processing</p>
+                        <a href="https://github.com/UserBlackBox/sorting-demonstrations" class="link-button" target="_blank" title="UserBlackBox/sorting-demonstrations"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column archived">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/roulette.jpg') }}" alt="Roulette Game Screenshot" style="width:100%;">
+                        <h3>Two-Player Roulette <i class="fas fa-archive"></i></h3>
+                        <p>Roulette game made using Ready to Program as the final project for the ICS3U3 course</p>
+                        <a href="https://github.com/UserBlackBox/ICS3U3-ISP" class="link-button" target="_blank" title="UserBlackBox/ICS3U3-ISP"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column archived">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/personality-test.png') }}" alt="Personality Test Screenshot" style="width:100%;">
+                        <h3>Personality Test <i class="fas fa-archive"></i></h3>
+                        <p>Personality quiz program created using Processing as the final project for the ICS2O3 course</p>
+                        <a href="https://github.com/UserBlackBox/ICS2O3-ISP" class="link-button" target="_blank" title="UserBlackBox/ICS2O3-ISP"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column archived">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/rainbow-table-kit.png') }}" alt="rainbow-table-kit terminal screenshot" style="width:100%;">
+                        <h3>Rainbow Table Kit <i class="fas fa-archive"></i></h3>
+                        <p>Command line tool for generating and searching rainbow tables created using python3 and hashlib</p>
+                        <a href="https://github.com/UserBlackBox/rainbow-table-kit" class="link-button" target="_blank" title="UserBlackBox/rainbow-table-kit"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/syscat.png') }}" alt="rainbow-table-kit terminal screenshot" style="width:100%;">
+                        <h3>bin</h3>
+                        <p>Useful scripts made to add new and interesting functionality to any Linux system</p>
+                        <a href="https://github.com/UserBlackBox/bin" class="link-button" target="_blank" title="UserBlackBox/bin"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='assets/rpi0case2.jpg') }}" alt="raspberry pi zero case" style="width:100%;">
+                        <h3>RaspberryPi0 ZeroDongle Case</h3>
+                        <p>3D printable case for the RasPi0 using the ZeroDongle by 8086 Consultancy, designed in Fusion 360</p>
+                        <a href="https://www.thingiverse.com/thing:4250567" class="link-button" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" height="14px" style="filter: invert(100%)"> Thingiverse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 70px;"></div>
+        <footer>
+            <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
+            <a href="https://www.thingiverse.com/ivy9909/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
+            <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
+            <p style="font-size: 12px;">@ 2020 Ivy Fan-Chiang</p>
+        </footer>
+
+        <script>
+            function show_archived(){
+                if(!document.getElementById("archived-check").checked){
+                    var elements = document.getElementsByClassName('archived');
+                    for(var i=0;i<elements.length;i++){
+                        elements[i].style.display = 'none';
+                    }
+                }else{
+                    var elements = document.getElementsByClassName('archived');
+                    for(var i=0;i<elements.length;i++){
+                        elements[i].style.display = 'block';
+                    }
+                }
+            }
+            show_archived();
+        </script>
+    </body>
+</html>

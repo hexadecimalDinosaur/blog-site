@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="Ivy Fan-Chiang">
+        <meta itemprop="name" content="Ivy Fan-Chiang">
+        <meta itemprop="description" content="">
+        <title>Contact - Ivy Fan-Chiang</title>
+        <style>
+            @import url("https://use.typekit.net/rjh1tmg.css");
+        </style>
+        <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div id="wrap">
+                <ul class="navbar">
+                    <li>
+                        <a class="title" href="/">Ivy Fan-Chiang</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/projects">Projects</a>
+                    </li>
+                    <li style="float: right">
+                        <a href="/contact" class="active">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>Contact Me</h1><hr>
+            <i class="far fa-envelope"></i> <b>Email: </b><a href="mailto:userblackbox@tutanota.com">userblackbox@tutanota.com</a><br>
+            <i class="fab fa-keybase"></i> <b>Keybase: </b><a href="https://keybase.io/userblackbox" target="_blank">https://keybase.io/userblackbox</a>
+            <h3>GPG Public Keys</h2>
+                <i class="fas fa-key"></i> <a href="http://keys.gnupg.net/pks/lookup?op=get&search=0xD0230F8F6E4FE77C">D0230F8F6E4FE77C</a><br>
+                <i class="fas fa-key"></i> <a href="http://keys.gnupg.net/pks/lookup?op=get&search=0xDC252AB7311BF896">DC252AB7311BF896</a>
+        </div>
+
+        <div style="height: 70px;"></div>
+        <footer>
+            <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='/assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
+            <a href="https://www.thingiverse.com/ivy9909/about" target="_blank"><img src="{{ url_for('static', filename='/assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
+            <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='/assets/envelope-regular.svg') }}" height="32" width="32"></a>
+            <p style="font-size: 12px;">@ 2020 Ivy Fan-Chiang</p>
+        </footer>
+    </body>
+</html>
