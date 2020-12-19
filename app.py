@@ -38,6 +38,14 @@ def blog_home():
     articles.sort(key=lambda f:f[1])
     return render_template('blog.html', articles=articles)
 
+@app.route('/blog/<slug>/')
+def article(slug):
+    if (not os.path.isfile('content/'+slug+'.json')) or (not os.path.isfile('content/'+slug+'.mkd')):
+        abort(404)
+    html = to_html('content/'+slug+'.mkd')
+    data = json.load(open('content/'+slug+'.json', 'r'))
+    return render_template('article.html', title=data['title'], date=data['date'], content=html)
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template('404.html')
