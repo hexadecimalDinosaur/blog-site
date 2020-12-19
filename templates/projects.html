@@ -4,10 +4,10 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <meta charset="UTF-8">
         <meta name="description" content="">
-        <meta name="author" content="Ivy Fan-Chiang">
-        <meta itemprop="name" content="Ivy Fan-Chiang">
+        <meta name="author" content="YourNameHere">
+        <meta itemprop="name" content="YourNameHere">
         <meta itemprop="description" content="">
-        <title>Projects - Ivy Fan-Chiang</title>
+        <title>Projects - YourNameHere</title>
         <style>
             @import url("https://use.typekit.net/rjh1tmg.css");
             .column {
@@ -62,7 +62,7 @@
             <div id="wrap">
                 <ul class="navbar">
                     <li>
-                        <a class="title" href="/">Ivy Fan-Chiang</a>
+                        <a class="title" href="/">YourNameHere</a>
                     </li>
                     <li>
                         <a href="/about">About</a>
@@ -82,7 +82,6 @@
 
         <div class="main">
             <h1>My Projects</h1><hr>
-            <p>Below you can find some of my programming and modelling projects, attached are links the the project site. Projects marked with the <i class="fas fa-archive"></i> symbol have been archived and no longer worked on</p>
 
             <div>
                 <b>Filter: </b>
@@ -90,138 +89,22 @@
             </div><br>
 
             <div class="row">
-                <div class="column">
-                    <div class="card card-img">
-                        <img class="card-image" src="{{ url_for('static', filename='assets/octoprint-cli.png') }}">
-                        <h3>octoprint-cli</h3>
-                        <p>Command line client for OctoPrint 3D printer written in Python 3 using the OctoPrint REST API<br>
-                            <small class="frameworks">Python, requests, argparse</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/octoprint-cli" class="link-button" target="_blank" title="UserBlackBox/octoprint-cli"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card card-img">
-                        <img class="card-image" src="{{ url_for('static', filename='assets/schedule-bot.png') }}">
-                        <h3>Schedule Bot</h3>
-                        <p>Discord bot to keep track of timetable information based off the TDSB 2020 quadmester model<br>
-                            <small class="frameworks">Python, discord.py</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/schedule-bot" class="link-button" target="_blank" title="UserBlackBox/schedule-bot"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <h3>Blog Site</h3>
-                        <p>Personal website written created using HTML5, CSS, and Flask<br>
-                            <small class="frameworks">HTML, CSS, Flask, Python</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/blog-site" class="link-button" target="_blank" title="UserBlackBox/blog-site"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card card-img">
-                        <img class="card-image" src="{{ url_for('static', filename='assets/rofi-i3-keybinds.png') }}">
-                        <h3>Rofi i3wm Keybind Menu</h3>
-                        <p>A Rofi menu bash script that displays your i3wm keybinds which can be run with xdotool<br>
-                            <small class="frameworks">bash, Python, rofi, i3wm</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/rofi-i3-keybinds" class="link-button" target="_blank" title="UserBlackBox/rofi-i3-keybinds"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column archived">
-                    <div class="card">
-                        <h3>pybeep <i class="fas fa-archive"></i></h3>
-                        <p>Python alternative to the out of date Linux beep command that uses ALSA instead of pcspkr<br>
-                            <small class="frameworks">Python, pysine</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/pybeep" class="link-button" target="_blank" title="UserBlackBox/pybeep"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column archived">
-                    <div class="card">
-                        <h3>Virus Game <i class="fas fa-archive"></i></h3>
-                        <p>Virus infection game created as the final project for the ICS4U0 course using PApplet and JFrame, created with <a href="https://github.com/ruk21">ruk21</a><br>
-                            <small class="frameworks">Java, JFrame, Processing</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/ICS4U0-ISP" class="link-button" target="_blank" title="UserBlackBox/ICS4U0-ISP"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <h3>Sorting Demonstrations</h3>
-                        <p>Demonstration programs of various sorting algorithms with explanations created in Processing<br>
-                            <small class="frameworks">Processing</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/sorting-demonstrations" class="link-button" target="_blank" title="UserBlackBox/sorting-demonstrations"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card card-img">
-                        <img class="card-image" src="{{ url_for('static', filename='assets/rpi0case2.jpg') }}">
-                        <h3>RaspberryPi0 ZeroDongle Case</h3>
-                        <p>3D printable case for the Raspberry Pi Zero using the ZeroDongle by 8086 Consultancy, designed in Fusion 360<br>
-                            <small class="frameworks">Fusion 360, 3D printing</small>
-                        </p>
-                        <a href="https://www.thingiverse.com/thing:4250567" class="link-button" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" height="14px" width="14px" style="filter: invert(100%)"> Thingiverse</a>
-                    </div>
-                </div>
-                <div class="column archived">
-                    <div class="card">
-                        <h3>Two-Player Roulette <i class="fas fa-archive"></i></h3>
-                        <p>Roulette game made using Ready to Program as the final project for the ICS3U3 course<br>
-                            <small class="frameworks">Java, RTP</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/ICS3U3-ISP" class="link-button" target="_blank" title="UserBlackBox/ICS3U3-ISP"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column archived">
-                    <div class="card">
-                        <h3>Personality Test <i class="fas fa-archive"></i></h3>
-                        <p>Personality quiz program created using Processing as the final project for the ICS2O3 course<br>
-                            <small class="frameworks">Processing</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/ICS2O3-ISP" class="link-button" target="_blank" title="UserBlackBox/ICS2O3-ISP"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column archived">
-                    <div class="card">
-                        <h3>Rainbow Table Kit <i class="fas fa-archive"></i></h3>
-                        <p>Command line tool for generating and searching rainbow tables created using Python and hashlib<br>
-                            <small class="frameworks">Python, hashlib</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/rainbow-table-kit" class="link-button" target="_blank" title="UserBlackBox/rainbow-table-kit"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card card-img">
-                        <img class="card-image" src="{{ url_for('static', filename='assets/syscat.png') }}">
-                        <h3>bin</h3>
-                        <p>Some bash scripts that I use on my Linux system<br>
-                            <small class="frameworks">bash</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/bin" class="link-button" target="_blank" title="UserBlackBox/bin"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card card-img">
-                        <img class="card-image" src="{{ url_for('static', filename='assets/dotfiles.png') }}">
-                        <h3>dotfiles</h3>
-                        <p>Configuration files for my Arch Linux i3wm setup<br>
-                            <small class="frameworks">i3wm, rofi, kitty, polybar, chezmoi</small>
-                        </p>
-                        <a href="https://github.com/UserBlackBox/dotfiles" class="link-button" target="_blank" title="UserBlackBox/dotfiles"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
+                <div class="card">
+                    <h3>Sample Project</h3>
+                    <p>Project Description Here<br>
+                        <small class="frameworks">Python, requests, argparse</small>
+                    </p>
+                    <a href="https://github.com" class="link-button" target="_blank" title=""><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
 
         <div style="height: 70px;"></div>
         <footer>
-            <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
-            <a href="https://www.thingiverse.com/ivy9909/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
-            <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
-            <p style="font-size: 12px;">@ 2020 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+            <a href="https://github.com" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
+            <a href="https://www.thingiverse.com" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
+            <a href="mailto:user@domain.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
+            <p style="font-size: 12px;">@ 2020 YourNameHere | <a href="https://github.com/blog-site">Source code</a> under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
         </footer>
 
         <script>

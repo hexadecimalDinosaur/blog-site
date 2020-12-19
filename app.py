@@ -22,10 +22,6 @@ def projects():
 def about():
     return render_template('about.html')
 
-@app.route('/timeline/')
-def timeline():
-    return render_template('timeline.html')
-
 @app.route('/blog/')
 def blog_home():
     articles = list()
