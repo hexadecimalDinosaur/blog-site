@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="Ivy Fan-Chiang">
+    <meta itemprop="name" content="Ivy Fan-Chiang">
+    <meta itemprop="description" content="">
+    <title>Blog - Ivy Fan-Chiang</title>
+    <style>
+        @import url("https://use.typekit.net/rjh1tmg.css");
+    </style>
+    <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
+</head>
+
+<body>
+<div id="navbar">
+    <div id="wrap">
+        <ul class="navbar">
+            <li>
+                <a class="title" href="/">Ivy Fan-Chiang</a>
+            </li>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="/projects">Projects</a>
+            </li>
+            <li>
+                <a href="/blog" class="active">Blog</a>
+            </li>
+            <li style="float: right">
+                <a href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="main">
+    <h1>Blog</h1><hr>
+    <p>Sometimes I may write some stuff here</p>
+    {% if not articles|length %}
+        <p>No articles yet...</p>
+    {% else %}
+        <ul>
+        {% for i in articles %}
+            <li style="list-style-type: none; margin-left: -20px;">{{ i[1] }} - <a href="/blog/{{ i[2] }}">{{ i[0] }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+<div style="height: 70px;"></div>
+<footer>
+    <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
+    <a href="https://www.thingiverse.com/ivy9909/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
+    <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
+    <p style="font-size: 12px;">@ 2020 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+</footer>
+</body>
+</html>

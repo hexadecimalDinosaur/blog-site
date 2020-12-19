@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-from flask import Flask, request, render_template, redirect, url_for
-import markdown
+from flask import Flask, request, render_template, redirect, url_for, abort
 import os
+from blog_render import to_html
+import json
 
 app = Flask(__name__)
 
@@ -24,6 +25,18 @@ def about():
 @app.route('/timeline/')
 def timeline():
     return render_template('timeline.html')
+
+@app.route('/blog/')
+def blog_home():
+    articles = list()
+    for f in os.listdir('content'):
+        if f.endswith('.json'):
+            articles.append(f)
+    for f in range(len(articles)):
+        data = json.load(open('content/'+articles[f], 'r'))
+        articles[f] = (data['title'], data['date'], data['slug'])
+    articles.sort(key=lambda f:f[1])
+    return render_template('blog.html', articles=articles)
 
 @app.errorhandler(404)
 def not_found(e):
