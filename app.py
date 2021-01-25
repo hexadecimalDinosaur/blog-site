@@ -6,12 +6,20 @@ import json
 import datetime
 import pytz
 from flask_mobility import Mobility
+from flask_caching import Cache
 
 url = 'https://ivyfanchiang.dev'
 owner = 'Ivy Fan-Chiang'
 
+config = {
+    "CACHE_TYPE": "simple", # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 300
+}
+
 app = Flask(__name__)
+app.config.from_mapping(config)
 Mobility(app)
+cache = Cache(app)
 
 @app.route('/')
 def index():
@@ -70,6 +78,7 @@ def article(slug):
     return render_template('article.html', title=data['title'], date=data['date'], content=html)
 
 @app.route('/rss.xml')
+@cache.cached(timeout=60)
 def rss():
     articles = []
     for f in os.listdir('content'):
