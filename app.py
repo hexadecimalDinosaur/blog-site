@@ -1,32 +1,48 @@
 #!/usr/bin/python3
-from flask import Flask, request, render_template, redirect, url_for, abort
+from flask import Flask, request, render_template, redirect, url_for, abort, Response
 import os
 from blog_render import to_html, to_html_noclass
 import json
-from feedgen.feed import FeedGenerator
 import datetime
 import pytz
+from flask_mobility import Mobility
 
-url = 'http://127.0.0.1:5000'
-owner = 'YourNameHere'
+url = 'https://ivyfanchiang.dev'
+owner = 'Ivy Fan-Chiang'
 
 app = Flask(__name__)
+Mobility(app)
 
 @app.route('/')
 def index():
+    if request.MOBILE:
+        return render_template('mobile/index.html')
     return render_template('index.html')
 
 @app.route('/contact/')
 def contact():
+    if request.MOBILE:
+        return render_template('mobile/contact.html')
     return render_template('contact.html')
 
 @app.route('/projects/')
 def projects():
-    return render_template('projects.html')
+    data = json.load(open('projects.json', 'r'))
+    if request.MOBILE:
+        return render_template('mobile/projects.html', projects=data['projects'])
+    return render_template('projects.html', projects=data['projects'])
 
 @app.route('/about/')
 def about():
-    return render_template('about.html')
+    if request.MOBILE:
+        return render_template('mobile/index.html')
+    return render_template('index.html')
+
+@app.route('/timeline/')
+def timeline():
+    if request.MOBILE:
+        return render_template('mobile/timeline.html')
+    return render_template('timeline.html')
 
 @app.route('/blog/')
 def blog_home():
@@ -39,6 +55,8 @@ def blog_home():
         articles[f] = (data['title'], data['date'], data['slug'])
     articles.sort(key=lambda f:f[1])
     articles = articles[::-1]
+    if request.MOBILE:
+        return render_template('mobile/blog.html', articles=articles)
     return render_template('blog.html', articles=articles)
 
 @app.route('/blog/<slug>/')
@@ -47,6 +65,8 @@ def article(slug):
         abort(404)
     html = to_html('content/'+slug+'.mkd')
     data = json.load(open('content/'+slug+'.json', 'r'))
+    if request.MOBILE:
+        return render_template('mobile/article.html', title=data['title'], date=data['date'], content=html)
     return render_template('article.html', title=data['title'], date=data['date'], content=html)
 
 @app.route('/rss.xml')
@@ -58,28 +78,27 @@ def rss():
     for f in range(len(articles)):
         data = json.load(open('content/'+articles[f], 'r'))
         articles[f] = (data['title'], data['date'], data['slug'])
-    feed = FeedGenerator()
-    feed.title("YourNameHere's Blog")
-    feed.author({'name':owner,'email':'user@domain.com'})
-    feed.link(href=url, rel='self')
-    feed.language('en-CA')
-    feed.updated(pytz.timezone("America/Toronto").localize(datetime.datetime.now()))
-    feed.subtitle(subtitle="Some description of the blog")
-    for f in articles:
-        entry = feed.add_entry()
-        entry.id(url+'/blog/'+f[2])
-        entry.title(f[0])
-        entry.link(href=url+'/blog/'+f[2])
-        entry.description(description=to_html_noclass('content/'+f[2]+'.mkd'))
-        entry.author({'name':owner,'email':'user@domain.com'})
-        date = pytz.timezone("America/Toronto").localize(datetime.datetime.strptime(f[1],'%Y/%m/%d'))
-        entry.pubDate(date)
-    return feed.rss_str(pretty=True)
+    title = "Ivy Fan-Chiang's Blog"
+    description = "Sometimes I may write some stuff here"
+    copyright = "@ 2020 Ivy Fan-Chiang"
+    for i in range(len(articles)):
+        articles[i] = {
+            'title': articles[i][0],
+            'date': pytz.timezone("America/Toronto").localize(datetime.datetime.strptime(articles[i][1],'%Y/%m/%d')),
+            'link': url+'/blog/'+articles[i][2],
+            'content': to_html_noclass('content/'+articles[i][2]+'.mkd')
+        }
 
+    return Response(render_template('rss.xml', url=url, posts=articles, title=title, description=description, copyright=copyright), mimetype='application/rss+xml')
 
+@app.route('/keybase.txt')
+def keybase():
+    return render_template('keybase.txt')
 
 @app.errorhandler(404)
 def not_found(e):
+    if request.MOBILE:
+        return render_template('mobile/404.html')
     return render_template('404.html')
 
 if __name__ == '__main__':

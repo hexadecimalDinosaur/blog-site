@@ -169,6 +169,18 @@ a:hover {
     display: block;
 }
 
+code {
+    font-family: roboto-mono, monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px dotted #888;
+}
+code:hover {
+    text-decoration: none;
+}
+
 ::-webkit-scrollbar {
     max-width: 10px !important;
     max-height: 10px !important;

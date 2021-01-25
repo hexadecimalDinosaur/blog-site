@@ -1,2 +1,3 @@
-/content/
-/.idea/
+content/*
+static/content/*
+.idea/*
