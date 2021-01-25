@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="mobile.css") }}">
+        <meta charset="UTF-8">
+        <title>Timeline - Ivy Fan-Chiang</title>
+        <style>
+            @import url("https://use.typekit.net/rjh1tmg.css");
+        </style>
+        <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div id="wrap">
+                <ul class="navbar">
+                    <li>
+                        <a class="title" href="{{ url_for('index') }}">Ivy Fan-Chiang</a>
+                    </li>
+                    <li style="float: right;">
+                        <span onclick="openNav()"><i class="fas fa-bars"></i></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('blog_home') }}">Blog</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <div class="main">
+            <h1>Timeline</h1><hr>
+            <p>This is a timeline of my projects and achievements</p>
+            <h2>2020</h2>
+            <ul>
+                <li>Joined <a href="https://ctftime.org/team/127228">Daemon Summoners</a> CTF team and participated in a many jeopardy and attack & defence CTFs with the team</li>
+                <li>Achieved honor roll on <a href="https://www.exploravision.org/2020-honorable-mentions">ExploraVision 2020</a> for write up on quantum cryptography created in science class</li>
+                <li>Participated in <a href="https://cybertitan.ca">CyberTitan</a> III National Finals as part of school team <code>404:team_not_found</code> and finished <a href="https://www.ictc-ctic.ca/ca-prime-wins-cybertitan-iii/">3rd</a>. Was featured in <a href="https://www.toronto.com/news-story/10021105-cybertitan-competition-educates-youth-in-cybersecurity/">toronto.com</a></li>
+                <li>Started <a href="https://github.com/UserBlackBox/octoprint-cli">octoprint-cli</a> project, a command line client for OctoPrint 3D printer servers</li>
+                <li>Started posting CAD designs on <a href="https://www.thingiverse.com/ivy9909/designs">Thingiverse</a>.</li>
+                <li>Achieved honor roll on Junior <a href="https://cemc.math.uwaterloo.ca/contests/computing.html">Canadian Computing Competition</a> 2020.</li>
+            </ul>
+            <h2>2019</h2>
+            <ul>
+                <li>Got a Monoprice Select Mini V2 and started creating various CAD models to print.</li>
+                <li>Started learning to use Linux by using Pop!_OS and Ubuntu.</li>
+                <li>Achieved honor roll on <a href="https://cemc.uwaterloo.ca/contests/fgh.html">Fryer Mathematics Contest</a> 2019.</li>
+            </ul>
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("sidenav").style.width = "100%";
+              }
+              
+              function closeNav() {
+                document.getElementById("sidenav").style.width = "0";
+              }
+        </script>
+    </body>
+</html>

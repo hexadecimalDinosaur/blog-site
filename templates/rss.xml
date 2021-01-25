@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>{{ title }}</title>
+		<description>{{ description }}</description>
+		<language>en-CA</language>
+		<copyright>{{ copyright }}</copyright>
+		<generator>Jinja 2</generator>
+		<link>{{ url }}</link>
+		<atom:link href="{{ url }}/rss.xml" rel="self" type="application/rss+xml"/>
+		{% for item in posts %}
+		<item>
+			<title>{{ item['title'] }}</title>
+			<link>{{ item['link'] }}</link>
+			<pubDate>{{ item['date'].strftime('%a, %d %b %Y %H:%M:%S %z') }}</pubDate>
+			<guid>{{ item['link'] }}</guid>
+			<description>{{ item['content'] }}</description>
+		</item>
+		{% endfor %}
+	</channel>
+</rss>

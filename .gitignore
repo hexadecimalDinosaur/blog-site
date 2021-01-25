@@ -1,3 +1,4 @@
 content/*
 static/content/*
 .idea/*
+/templates/keybase.txt

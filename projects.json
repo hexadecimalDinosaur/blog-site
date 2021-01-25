@@ -1,0 +1,110 @@
+{
+  "projects": [
+    {
+      "name": "octoprint-cli",
+      "description": "Command line client for OctoPrint 3D printer servers written in Python 3",
+      "frameworks": "Python, requests, argparse",
+      "github": "UserBlackBox/octoprint-cli",
+      "image": "octoprint-cli.png",
+      "archived": false
+    },
+    {
+      "name": "Schedule Bot",
+      "description": "Discord bot to keep track of timetable information based off the TDSB 2020 quadmester model",
+      "frameworks": "Python, discord.py",
+      "github": "UserBlackBox/schedule-bot",
+      "image": "schedule-bot.png",
+      "archived": false
+    },
+    {
+      "name": "Blog Site",
+      "description": "Personal website created using HTML5, CSS, and Flask",
+      "frameworks": "HTML5, CSS, Flask, Python",
+      "github": "UserBlackBox/blog-site",
+      "link": "https://ivyfanchiang.dev",
+      "archived": false
+    },
+    {
+      "name": "Rofi i3wm Keybind Menu",
+      "description": "A Rofi menu bash script that displays your i3wm keybinds which can be run with xdotool",
+      "frameworks": "bash, Python, rofi, i3wm",
+      "github": "UserBlackBox/rofi-i3-keybinds",
+      "image": "rofi-i3-keybinds.png",
+      "archived": false
+    },
+    {
+      "name": "ThemeSpace",
+      "description": "Yearly theme/new years resolution tracker site, created for New Year New Hack",
+      "frameworks": "Python, Flask, SQLAlchemy, SQLite",
+      "github": "UserBlackBox/theme-tracker",
+      "devpost": "https://devpost.com/software/themespace",
+      "archived": true
+    },
+    {
+      "name": "Raspberry Pi 0 ZeroDongle Case",
+      "description": "3D printable case for the Raspberry Pi Zero using the ZeroDongle by 8086 Consultancy, designed in Fusion 360",
+      "frameworks": "Fusion 360, 3D printing",
+      "image": "rpi0case2.jpg",
+      "thingiverse": "https://www.thingiverse.com/thing:4250567",
+      "archived": false
+    },
+    {
+      "name": "pybeep",
+      "description": "Python alternative to the out of date Linux beep command that uses ALSA instead of pcspkr",
+      "frameworks": "Python, pysine",
+      "github": "UserBlackBox/pybeep",
+      "archived": true
+    },
+    {
+      "name": "Virus Game",
+      "description": "Virus infection game created as the final project for the ICS4U0 course using PApplet and JFrame, created with <a href=\"https://github.com/ruk21\">ruk21</a>",
+      "frameworks": "Java, JFrame, Processing",
+      "github": "UserBlackBox/ICS4U0-ISP",
+      "archived": true
+    },
+    {
+      "name": "Sorting Demonstrations",
+      "description": "Demonstration programs of various sorting algorithms with explanations created in Processing",
+      "frameworks": "Processing",
+      "github": "UserBlackBox/sorting-demonstrations",
+      "archived": false
+    },
+    {
+      "name": "Two-Player Roulette",
+      "description": "Roulette game made using Ready to Program as the final project for the ICS3U3 course",
+      "frameworks": "Java, RTP",
+      "github": "UserBlackBox/ICS3U3-ISP",
+      "archived": true
+    },
+    {
+      "name": "Personality Test",
+      "description": "Personality quiz program created using Processing as the final project for the ICS2O3 course",
+      "frameworks": "Processing",
+      "github": "UserBlackBox/ICS2O3-ISP",
+      "archived": true
+    },
+    {
+      "name": "Rainbow Table Kit",
+      "description": "Command line tool for generating and searching rainbow tables created using Python and hashlib",
+      "frameworks": "Python, hashlib",
+      "github": "UserBlackBox/rainbow-table-kit",
+      "archived": true
+    },
+    {
+      "name": "bin",
+      "description": "Some bash scripts that I use on my Linux system",
+      "frameworks": "bash, zsh",
+      "image": "syscat.png",
+      "github": "UserBlackBox/bin",
+      "archived": false
+    },
+    {
+      "name": "dotfiles",
+      "description": "Configuration files for my Arch Linux i3wm setup",
+      "frameworks": "i3wm, rofi, kitty, polybar, chezmoi",
+      "image": "dotfiles.png",
+      "github": "UserBlackBox/dotfiles",
+      "archived": false
+    }
+  ]
+}
