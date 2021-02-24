@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from flask import Flask, request, render_template, redirect, url_for, abort, Response
+from flask import Flask, request, render_template, redirect, url_for, abort, Response, send_file
 import os
 from blog_render import to_html, to_html_noclass
 import json
@@ -7,6 +7,7 @@ import datetime
 import pytz
 from flask_mobility import Mobility
 from flask_caching import Cache
+import jinja2
 
 url = 'https://ivyfanchiang.dev'
 owner = 'Ivy Fan-Chiang'
@@ -103,6 +104,14 @@ def rss():
 @app.route('/keybase.txt')
 def keybase():
     return render_template('keybase.txt')
+
+@app.route('/robots.txt')
+def robots():
+    return send_file('templates/robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_file('templates/sitemap.xml')
 
 @app.errorhandler(404)
 def not_found(e):
