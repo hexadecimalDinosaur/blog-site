@@ -7,7 +7,6 @@ import datetime
 import pytz
 from flask_mobility import Mobility
 from flask_caching import Cache
-import jinja2
 
 url = 'https://ivyfanchiang.dev'
 owner = 'Ivy Fan-Chiang'
@@ -98,7 +97,6 @@ def rss():
             'link': url+'/blog/'+articles[i][2],
             'content': to_html_noclass('content/'+articles[i][2]+'.mkd')
         }
-
     return Response(render_template('rss.xml', url=url, posts=articles, title=title, description=description, copyright=copyright), mimetype='application/rss+xml')
 
 @app.route('/keybase.txt')
