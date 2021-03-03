@@ -4,6 +4,10 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='code_blocks.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="mobile.css") }}">
         <meta charset="UTF-8">
+        <meta name="author" content="Ivy Fan-Chiang">
+        <meta itemprop="name" content="{{ title }}">
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:url" content="https://ivyfanchiang.dev">
         <title>{{ title }} - Ivy Fan-Chiang</title>
         <style>
             @import url("https://use.typekit.net/rjh1tmg.css");
@@ -34,9 +38,13 @@
         </div>
 
         <div class="main">
-            <h1>{{ title }}</h1><hr>
-            <small>Posted {{ date }}</small><br>
-            {{ content|safe }}
+            <div class="main">
+                <article>
+                    <h1>{{ title }}</h1><hr>
+                    <small>Posted {{ date }}</small><br>
+                    {{ content|safe }}
+                </article>
+            </div>
         </div>
 
         <script>

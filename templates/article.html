@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='code_blocks.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
-    <meta name="description" content="">
     <meta name="author" content="Ivy Fan-Chiang">
     <meta itemprop="name" content="{{ title }}">
-    <meta itemprop="description" content="">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:url" content="https://ivyfanchiang.dev">
     <title>{{ title }} - Ivy Fan-Chiang</title>
     <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
 </head>
@@ -39,9 +39,11 @@
 </div>
 
 <div class="main">
-    <h1>{{ title }}</h1><hr>
-    <small>Posted {{ date }}</small><br>
-    {{ content|safe }}
+    <article>
+        <h1>{{ title }}</h1><hr>
+        <small>Posted {{ date }}</small><br>
+        {{ content|safe }}
+    </article>
 </div>
 
 <div style="height: 70px;"></div>
