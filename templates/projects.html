@@ -55,6 +55,23 @@
                 column-count: 1;
             }
         }
+        .github-stats{
+            padding-left: 15px;
+            color: #646464;
+            text-decoration: none;
+        }
+        .github-stats a{
+            color: #646464;
+            text-decoration: none;
+        }
+        .github-stats a:hover{
+            color: #646464;
+            text-decoration: none;
+        }
+        .github-stats a:visited{
+            color: #646464;
+            text-decoration: none;
+        }
     </style>
     <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
 </head>
@@ -101,7 +118,8 @@
             {% if item.github is defined %}<a href="https://github.com/{{ item.github }}" class="link-button" target="_blank" title="{{ item.github }}"><i class="fab fa-github"></i> GitHub</a>{% endif %}
             {% if item.thingiverse is defined %}<a href="{{ item.thingiverse }}" class="link-button" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" height="14px" width="14px" style="filter: invert(100%)"> Thingiverse</a>{% endif %}
             {% if item.devpost is defined %}<a href="{{ item.devpost }}" class="link-button" target="_blank"><img src="{{ url_for('static', filename='assets/devpost.png') }}" height="14px" width="14px" style="filter: invert(100%)"> Devpost</a>{% endif %}
-                {% if item.link is defined %}<a href="{{ item.link }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Link</a>{% endif %}
+            {% if item.link is defined %}<a href="{{ item.link }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Link</a>{% endif %}
+            {% if item.github is defined %}<span class="github-stats" id="github-stats-{{ item.github }}"> </span>{% endif %}
             </div>
         </div>{% endfor %}
     </div>
@@ -116,6 +134,7 @@
 </footer>
 
 <script>
+    //archived projects hider
     function show_archived(){
         if(!document.getElementById("archived-check").checked){
             var elements = document.getElementsByClassName('archived');
@@ -130,6 +149,26 @@
         }
     }
     show_archived();
+</script>
+<script src="{{ url_for('static', filename="axios.min.js") }}"></script>
+<script>
+    //github stats fetcher
+    async function fetch_github_stats(repo){
+        var request = await axios.get("https://api.github.com/repos/"+repo, {headers:{}});
+        var data = request.data;
+        var element = document.getElementById("github-stats-"+repo);
+        element.innerHTML = "";
+        if(data.forks_count > 0) {
+            element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/network/members\"><i class=\"fas fa-code-branch\"></i> " + data.forks_count + "</a>";
+            if(data.stargazers_count > 0)
+                element.innerHTML += "&ensp;";
+        }
+        if(data.stargazers_count > 0)
+            element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/stargazers\"><i class=\"far fa-star\"></i> " + data.stargazers_count + "</a>";
+    }
+    {% for item in projects %}{% if item.github is defined %}
+    fetch_github_stats("{{ item.github }}");
+    {% endif %}{% endfor %}
 </script>
 </body>
 </html>
