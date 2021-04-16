@@ -69,7 +69,7 @@ def blog_home():
 
 @app.route('/blog/<slug>/')
 def article(slug):
-    if (not os.path.isfile('content/'+slug+'.json')) or (not os.path.isfile('content/'+slug+'.mkd')):
+    if slug+'.json' not in os.listdir('content') or slug+'.mkd' not in os.listdir('content'):
         abort(404)
     html = to_html('content/'+slug+'.mkd')
     data = json.load(open('content/'+slug+'.json', 'r'))
