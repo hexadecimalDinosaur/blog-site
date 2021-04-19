@@ -46,7 +46,7 @@ def about():
         return render_template('mobile/index.html')
     return render_template('index.html')
 
-@app.route('/timeline/')
+@app.route('/achievements/')
 def timeline():
     if request.MOBILE:
         return render_template('mobile/timeline.html')
