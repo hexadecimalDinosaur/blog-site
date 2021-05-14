@@ -77,6 +77,13 @@ def article(slug):
         return render_template('mobile/article.html', title=data['title'], date=data['date'], content=html)
     return render_template('article.html', title=data['title'], date=data['date'], content=html)
 
+@app.route('/reference/<slug>/')
+def cheatsheet(slug):
+    if slug+'.md' not in os.listdir('static/reference'):
+        abort(404)
+    html = to_html('static/reference/'+slug+'.md')
+    return render_template('base.html', title=slug, content=html)
+
 @app.route('/rss.xml')
 @cache.cached(timeout=60)
 def rss():
