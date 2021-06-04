@@ -54,13 +54,10 @@ def timeline():
 
 @app.route('/blog/')
 def blog_home():
-    articles = list()
-    for f in os.listdir('content'):
-        if f.endswith('.json'):
-            articles.append(f)
-    for f in range(len(articles)):
-        data = json.load(open('content/'+articles[f], 'r'))
-        articles[f] = (data['title'], data['date'], data['slug'])
+    content = json.load(open('content/content.json', 'r'))
+    articles = []
+    for f in content.keys():
+        articles.append((content[f]['title'], content[f]['date'], f))
     articles.sort(key=lambda f:f[1])
     articles = articles[::-1]
     if request.MOBILE:
@@ -69,10 +66,11 @@ def blog_home():
 
 @app.route('/blog/<slug>/')
 def article(slug):
-    if slug+'.json' not in os.listdir('content') or slug+'.mkd' not in os.listdir('content'):
+    articles = json.load(open('content/content.json', 'r'))
+    if slug not in articles.keys():
         abort(404)
-    html = to_html('content/'+slug+'.mkd')
-    data = json.load(open('content/'+slug+'.json', 'r'))
+    html = to_html('content/'+articles[slug]['file'])
+    data = articles[slug]
     if request.MOBILE:
         return render_template('mobile/article.html', title=data['title'], date=data['date'], content=html)
     return render_template('article.html', title=data['title'], date=data['date'], content=html)
@@ -87,13 +85,10 @@ def cheatsheet(slug):
 @app.route('/rss.xml')
 @cache.cached(timeout=60)
 def rss():
+    content = json.load(open('content/content.json', 'r'))
     articles = []
-    for f in os.listdir('content'):
-        if f.endswith('.json'):
-            articles.append(f)
-    for f in range(len(articles)):
-        data = json.load(open('content/'+articles[f], 'r'))
-        articles[f] = (data['title'], data['date'], data['slug'])
+    for f in content.keys():
+        articles.append((content[f]['title'], content[f]['date'], f))
     title = "Ivy Fan-Chiang's Blog"
     description = "Sometimes I may write some stuff here"
     copyright = "@ 2021 Ivy Fan-Chiang"
@@ -102,7 +97,7 @@ def rss():
             'title': articles[i][0],
             'date': pytz.timezone("America/Toronto").localize(datetime.datetime.strptime(articles[i][1],'%Y/%m/%d')),
             'link': url+'/blog/'+articles[i][2],
-            'content': to_html_noclass('content/'+articles[i][2]+'.mkd')
+            'content': to_html_noclass('content/'+content[articles[i][2]]['file'])
         }
     return Response(render_template('rss.xml', url=url, posts=articles, title=title, description=description, copyright=copyright), mimetype='application/rss+xml')
 
