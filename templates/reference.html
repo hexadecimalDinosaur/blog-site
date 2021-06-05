@@ -53,4 +53,17 @@
     <p style="font-size: 12px;">@ 2021 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
 </footer>
 </body>
+<script>
+    const code = document.querySelector('code');
+    code.title = "Click to copy"
+    code.onclick = function() {
+        document.execCommand("copy");
+    }
+    code.addEventListener("copy", function(event) {
+        event.preventDefault();
+        if (event.clipboardData) {
+            event.clipboardData.setData('text/plain', code.textContent);
+        }
+    });
+</script>
 </html>
