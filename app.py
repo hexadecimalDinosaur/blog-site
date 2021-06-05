@@ -69,7 +69,10 @@ def article(slug):
     articles = json.load(open('content/content.json', 'r'))
     if slug not in articles.keys():
         abort(404)
-    html = to_html('content/'+articles[slug]['file'])
+    try:
+        html = to_html('content/'+articles[slug]['file'])
+    except FileNotFoundError:
+        abort(404)
     data = articles[slug]
     if request.MOBILE:
         return render_template('mobile/article.html', title=data['title'], date=data['date'], content=html)
@@ -77,10 +80,14 @@ def article(slug):
 
 @app.route('/reference/<slug>/')
 def cheatsheet(slug):
-    if slug+'.md' not in os.listdir('static/reference'):
+    sheets = json.load(open('content/reference.json', 'r'))
+    if slug not in sheets.keys():
         abort(404)
-    html = to_html('static/reference/'+slug+'.md')
-    return render_template('base.html', title=slug, content=html)
+    try:
+        html = to_html('content/'+sheets[slug]['file'])
+    except FileNotFoundError:
+        abort(404)
+    return render_template('reference.html', title=sheets[slug]['title'], content=html)
 
 @app.route('/rss.xml')
 @cache.cached(timeout=60)
