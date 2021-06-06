@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from flask import Flask, request, render_template, redirect, url_for, abort, Response, send_file
 import os
-from blog_render import to_html, to_html_noclass
+from blog_render import to_html, to_html_noclass, to_html_toc
 import json
 import datetime
 import pytz
@@ -84,10 +84,10 @@ def cheatsheet(slug):
     if slug not in sheets.keys():
         abort(404)
     try:
-        html = to_html('content/'+sheets[slug]['file'])
+        html, toc = to_html_toc('content/'+sheets[slug]['file'])
     except FileNotFoundError:
         abort(404)
-    return render_template('reference.html', title=sheets[slug]['title'], content=html)
+    return render_template('reference.html', title=sheets[slug]['title'], content=html, toc=toc)
 
 @app.route('/rss.xml')
 @cache.cached(timeout=60)
