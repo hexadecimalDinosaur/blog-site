@@ -52,6 +52,12 @@ def timeline():
         return render_template('mobile/timeline.html')
     return render_template('timeline.html')
 
+@app.route('/misc/')
+def misc():
+    if request.MOBILE:
+        return render_template('mobile/misc.html', content=to_html('content/misc.md'))
+    return render_template('misc.html', content=to_html('content/misc.md'))
+
 @app.route('/blog/')
 def blog_home():
     content = json.load(open('content/content.json', 'r'))
