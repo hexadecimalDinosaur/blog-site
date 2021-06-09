@@ -175,3 +175,16 @@ code:hover {
   
 ::-webkit-scrollbar-thumb:hover {
     background: #1c547f !important; }
+
+table, th, td {
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background: #ccc;
+}
