@@ -87,6 +87,8 @@ def cheatsheet(slug):
         html, toc = to_html_toc('content/'+sheets[slug]['file'])
     except FileNotFoundError:
         abort(404)
+    if request.MOBILE:
+        return render_template('mobile/reference.html', title=sheets[slug]['title'], content=html, toc=toc)
     return render_template('reference.html', title=sheets[slug]['title'], content=html, toc=toc)
 
 @app.route('/rss.xml')
