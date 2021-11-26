@@ -9,12 +9,34 @@
       "archived": false
     },
     {
+      "name": "pycDisGUI",
+      "description": "GTK GUI for Python bytecode disassembly",
+      "frameworks": "Python, xdis, PyGObject",
+      "github": "UserBlackBox/pycDisGUI",
+      "image": "pycDisGUI.png",
+      "archived": false
+    },
+    {
+      "name": "authlog-xlsx",
+      "description": "Commmand line utility to parse auth.log files into Excel .xlsx files",
+      "frameworks": "Python, argparse, xlsxwriter",
+      "github": "Userblackbox/authlog-xlsx",
+      "archived": false
+    },
+    {
+      "name": "GitHub Keyfetch",
+      "description": "GTK Utility for retrieving public GPG and SSH keys from GitHub profiles",
+      "frameworks": "Python,PyGObject, requests",
+      "github": "UserBlackBox/gh-keyfetch",
+      "archived": false
+    },
+    {
       "name": "Schedule Bot",
       "description": "Discord bot to keep track of timetable information based off the TDSB 2020 quadmester model",
       "frameworks": "Python, discord.py",
       "github": "UserBlackBox/schedule-bot",
       "image": "schedule-bot.png",
-      "archived": false
+      "archived": true
     },
     {
       "name": "Blog Site",
@@ -33,14 +55,6 @@
       "archived": false
     },
     {
-      "name": "ThemeSpace",
-      "description": "Yearly theme/new years resolution tracker site, created for New Year New Hack",
-      "frameworks": "Python, Flask, SQLAlchemy, SQLite",
-      "github": "UserBlackBox/theme-tracker",
-      "devpost": "https://devpost.com/software/themespace",
-      "archived": true
-    },
-    {
       "name": "Raspberry Pi 0 ZeroDongle Case",
       "description": "3D printable case for the Raspberry Pi Zero using the ZeroDongle by 8086 Consultancy, designed in Fusion 360",
       "frameworks": "Fusion 360, 3D printing",
@@ -49,17 +63,25 @@
       "archived": false
     },
     {
+      "name": "dotfiles",
+      "description": "Configuration files for my Arch Linux i3wm setup",
+      "frameworks": "i3wm, rofi, kitty, polybar, chezmoi",
+      "image": "dotfiles.png",
+      "github": "UserBlackBox/dotfiles",
+      "archived": false
+    },
+    {
+      "name": "Dashboard",
+      "description": "Web interface for viewing data gathered from APIs",
+      "frameworks": "Python, Django, requests",
+      "github": "UserBlackBox/theArchive/tree/main/dashboard",
+      "archived": true
+    },
+    {
       "name": "pybeep",
       "description": "Python alternative to the out of date Linux beep command that uses ALSA instead of pcspkr",
       "frameworks": "Python, pysine",
       "github": "UserBlackBox/pybeep",
-      "archived": true
-    },
-    {
-      "name": "Virus Game",
-      "description": "Virus infection game created as the final project for the ICS4U0 course using PApplet and JFrame, created with <a href=\"https://github.com/ruk21\">ruk21</a>",
-      "frameworks": "Java, JFrame, Processing",
-      "github": "UserBlackBox/ICS4U0-ISP",
       "archived": true
     },
     {
@@ -70,24 +92,19 @@
       "archived": false
     },
     {
-      "name": "Two-Player Roulette",
-      "description": "Roulette game made using Ready to Program as the final project for the ICS3U3 course",
-      "frameworks": "Java, RTP",
-      "github": "UserBlackBox/ICS3U3-ISP",
-      "archived": true
+      "name": "Adjustable Triangle",
+      "description": "3D printable adjustable triangle drafting tool",
+      "frameworks": "Fusion 360, 3D printing",
+      "image": "adj_triangle.jpg",
+      "thingiverse": "https://www.thingiverse.com/thing:4885056",
+      "archived": false
     },
     {
-      "name": "Personality Test",
-      "description": "Personality quiz program created using Processing as the final project for the ICS2O3 course",
-      "frameworks": "Processing",
-      "github": "UserBlackBox/ICS2O3-ISP",
-      "archived": true
-    },
-    {
-      "name": "Rainbow Table Kit",
-      "description": "Command line tool for generating and searching rainbow tables created using Python and hashlib",
-      "frameworks": "Python, hashlib",
-      "github": "UserBlackBox/rainbow-table-kit",
+      "name": "FoodPrints",
+      "description": "Web app that parses groccery reciepts to provide insights on environmental impact. Created for <a href=\"https://technova2021.devpost.com/\">Technova 2021</a>",
+      "frameworks": "Python, Django, HTML5, CSS, Google Cloud Vision",
+      "github": "aavaSapkota/footprints",
+      "devpost": "https://devpost.com/software/greentrack-odeauw",
       "archived": true
     },
     {
@@ -99,12 +116,12 @@
       "archived": false
     },
     {
-      "name": "dotfiles",
-      "description": "Configuration files for my Arch Linux i3wm setup",
-      "frameworks": "i3wm, rofi, kitty, polybar, chezmoi",
-      "image": "dotfiles.png",
-      "github": "UserBlackBox/dotfiles",
-      "archived": false
+      "name": "ThemeSpace",
+      "description": "Yearly theme/new years resolution tracker site, created for New Year New Hack",
+      "frameworks": "Python, Flask, SQLAlchemy, SQLite",
+      "github": "UserBlackBox/theme-tracker",
+      "devpost": "https://devpost.com/software/themespace",
+      "archived": true
     }
   ]
 }
