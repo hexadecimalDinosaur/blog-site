@@ -116,7 +116,6 @@ a:hover {
 }
 .navbar a{
     padding: 14px 16px;
-    padding-bottom: 17px;
     text-decoration: none;
     color: white;
     display: block;
@@ -207,4 +206,16 @@ table {
 
 tr:nth-child(even) {
     background: #ccc;
+}
+
+.codehilitetable table, th, td {
+	border: none;
+}
+
+.codehilitetable {
+	border: none;
+}
+
+p {
+    line-height: 1.5em;
 }

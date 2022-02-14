@@ -8,7 +8,7 @@ import pytz
 from flask_mobility import Mobility
 from flask_caching import Cache
 
-url = 'https://ivyfanchiang.dev'
+url = 'https://ivyfanchiang.ca'
 owner = 'Ivy Fan-Chiang'
 
 config = {
@@ -106,7 +106,7 @@ def rss():
         articles.append((content[f]['title'], content[f]['date'], f))
     title = "Ivy Fan-Chiang's Blog"
     description = "Sometimes I may write some stuff here"
-    copyright = "@ 2021 Ivy Fan-Chiang"
+    copyright = "@ 2022 Ivy Fan-Chiang"
     for i in range(len(articles)):
         articles[i] = {
             'title': articles[i][0],
