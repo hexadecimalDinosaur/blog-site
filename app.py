@@ -28,12 +28,14 @@ def index():
     return render_template('index.html')
 
 @app.route('/contact/')
+@app.route('/contact')
 def contact():
     if request.MOBILE:
         return render_template('mobile/contact.html')
     return render_template('contact.html')
 
 @app.route('/projects/')
+@app.route('/projects')
 def projects():
     data = json.load(open('projects.json', 'r'))
     if request.MOBILE:
@@ -41,24 +43,28 @@ def projects():
     return render_template('projects.html', projects=data['projects'])
 
 @app.route('/about/')
+@app.route('/about')
 def about():
     if request.MOBILE:
         return render_template('mobile/index.html')
     return render_template('index.html')
 
 @app.route('/achievements/')
+@app.route('/achievements')
 def timeline():
     if request.MOBILE:
         return render_template('mobile/timeline.html')
     return render_template('timeline.html')
 
 @app.route('/misc/')
+@app.route('/misc')
 def misc():
     if request.MOBILE:
         return render_template('mobile/misc.html', content=to_html('content/misc.md'))
     return render_template('misc.html', content=to_html('content/misc.md'))
 
 @app.route('/blog/')
+@app.route('/blog')
 def blog_home():
     content = json.load(open('content/content.json', 'r'))
     articles = []
@@ -71,6 +77,7 @@ def blog_home():
     return render_template('blog.html', articles=articles)
 
 @app.route('/blog/<slug>/')
+@app.route('/blog/<slug>')
 def article(slug):
     articles = json.load(open('content/content.json', 'r'))
     if slug not in articles.keys():
@@ -85,6 +92,7 @@ def article(slug):
     return render_template('article.html', title=data['title'], date=data['date'], content=html)
 
 @app.route('/reference/<slug>/')
+@app.route('/reference/<slug>')
 def cheatsheet(slug):
     sheets = json.load(open('content/reference.json', 'r'))
     if slug not in sheets.keys():
