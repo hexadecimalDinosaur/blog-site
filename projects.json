@@ -4,7 +4,7 @@
       "name": "octoprint-cli",
       "description": "Command line client for OctoPrint 3D printer servers written in Python 3",
       "frameworks": "Python, requests, argparse",
-      "github": "UserBlackBox/octoprint-cli",
+      "github": "hexadecimalDinosaur/octoprint-cli",
       "image": "octoprint-cli.png",
       "archived": false
     },
@@ -12,7 +12,7 @@
       "name": "pycDisGUI",
       "description": "GTK GUI for Python bytecode disassembly",
       "frameworks": "Python, xdis, PyGObject",
-      "github": "UserBlackBox/pycDisGUI",
+      "github": "hexadecimalDinosaur/pycDisGUI",
       "image": "pycDisGUI.png",
       "archived": false
     },
@@ -27,14 +27,14 @@
       "name": "GitHub Keyfetch",
       "description": "GTK Utility for retrieving public GPG and SSH keys from GitHub profiles",
       "frameworks": "Python,PyGObject, requests",
-      "github": "UserBlackBox/gh-keyfetch",
+      "github": "hexadecimalDinosaur/gh-keyfetch",
       "archived": false
     },
     {
       "name": "Schedule Bot",
       "description": "Discord bot to keep track of timetable information based off the TDSB 2020 quadmester model",
       "frameworks": "Python, discord.py",
-      "github": "UserBlackBox/schedule-bot",
+      "github": "hexadecimalDinosaur/schedule-bot",
       "image": "schedule-bot.png",
       "archived": true
     },
@@ -42,7 +42,7 @@
       "name": "Blog Site",
       "description": "Personal website created using HTML5, CSS, and Flask",
       "frameworks": "HTML5, CSS, Flask, Python",
-      "github": "UserBlackBox/blog-site",
+      "github": "hexadecimalDinosaur/blog-site",
       "link": "https://ivyfanchiang.ca",
       "archived": false
     },
@@ -50,7 +50,7 @@
       "name": "Rofi i3wm Keybind Menu",
       "description": "A Rofi menu bash script that displays your i3wm keybinds which can be run with xdotool",
       "frameworks": "bash, Python, rofi, i3wm",
-      "github": "UserBlackBox/rofi-i3-keybinds",
+      "github": "hexadecimalDinosaur/rofi-i3-keybinds",
       "image": "rofi-i3-keybinds.png",
       "archived": false
     },
@@ -67,28 +67,28 @@
       "description": "Configuration files for my Arch Linux i3wm setup",
       "frameworks": "i3wm, rofi, kitty, polybar, chezmoi",
       "image": "dotfiles.png",
-      "github": "UserBlackBox/dotfiles",
+      "github": "hexadecimalDinosaur/dotfiles",
       "archived": false
     },
     {
       "name": "Dashboard",
       "description": "Web interface for viewing data gathered from APIs",
       "frameworks": "Python, Django, requests",
-      "github": "UserBlackBox/theArchive/tree/main/dashboard",
+      "github": "hexadecimalDinosaur/theArchive/tree/main/dashboard",
       "archived": true
     },
     {
       "name": "pybeep",
       "description": "Python alternative to the out of date Linux beep command that uses ALSA instead of pcspkr",
       "frameworks": "Python, pysine",
-      "github": "UserBlackBox/pybeep",
+      "github": "hexadecimalDinosaur/pybeep",
       "archived": true
     },
     {
       "name": "Sorting Demonstrations",
       "description": "Demonstration programs of various sorting algorithms with explanations created in Processing",
       "frameworks": "Processing",
-      "github": "UserBlackBox/sorting-demonstrations",
+      "github": "hexadecimalDinosaur/sorting-demonstrations",
       "archived": false
     },
     {
@@ -112,14 +112,14 @@
       "description": "Some bash scripts that I use on my Linux system",
       "frameworks": "bash, zsh",
       "image": "syscat.png",
-      "github": "UserBlackBox/bin",
+      "github": "hexadecimalDinosaur/bin",
       "archived": false
     },
     {
       "name": "ThemeSpace",
       "description": "Yearly theme/new years resolution tracker site, created for New Year New Hack",
       "frameworks": "Python, Flask, SQLAlchemy, SQLite",
-      "github": "UserBlackBox/theme-tracker",
+      "github": "hexadecimalDinosaur/theme-tracker",
       "devpost": "https://devpost.com/software/themespace",
       "archived": true
     }
