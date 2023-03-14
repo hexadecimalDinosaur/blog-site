@@ -1,5 +1,6 @@
 import markdown
-from  lru import lru_cache
+from lru import lru_cache
+from bs4 import BeautifulSoup
 
 @lru_cache(maxsize=32, expires=60)
 def to_html(file):
@@ -23,6 +24,11 @@ def to_html_toc(file):
         }
     })
     html = convert.convert(md)
+    soup = BeautifulSoup(html)
+    tables = soup.find_all('table')
+    for table in tables:
+        table.wrap(soup.new_tag('div', attrs={'class': 'responsive-table'}))
+    html = soup.prettify()
     toc = convert.toc
     return html, toc
 

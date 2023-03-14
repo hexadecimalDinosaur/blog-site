@@ -1,61 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <meta name="robots" content="noindex">
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="author" content="Ivy Fan-Chiang">
-    <meta itemprop="name" content="Ivy Fan-Chiang">
-    <meta itemprop="description" content="">
-    <title>Projects - Ivy Fan-Chiang</title>
+{% extends 'base.html' %}
+
+{% block head %}
     <style>
-        @import url("https://use.typekit.net/rjh1tmg.css");
-        .column {
-            float: none;
-            padding: 0px 10px;
-            padding-bottom: 20px;
-            display: inline-block;
-            width: 100%;
-        }
-        .row {
-            margin: 0 -5px;
-            flex-wrap: wrap;
-            flex-direction: row;
-            column-count: 3;
-        }
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            padding-top: 6px;
-            text-align: left;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            width: 100%;
-            display: inline-block;
-        }
-        .card-img {
-            padding-top: 16px;
-        }
-        .card-image {
-            width: 100%;
-        }
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-        .frameworks {
-            color: #646464;
-        }
-        @media screen and (max-width: 1300px) {
-            .row {
-                column-count: 2;
-            }
-        }
-        @media screen and (max-width: 800px) {
-            .row {
-                column-count: 1;
-            }
-        }
         .github-stats{
             padding-left: 15px;
             color: #646464;
@@ -73,106 +19,82 @@
             color: #646464;
             text-decoration: none;
         }
+        .project {
+            padding-bottom: 1em;
+        }
+        .frameworks {
+            color: #646464;
+        }
+
     </style>
-    <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
-</head>
-<body>
-<div id="navbar">
-    <div id="wrap">
-        <ul class="navbar">
-            <li>
-                <a class="title" href="/">Ivy Fan-Chiang</a>
-            </li>
-            <li>
-                <a href="/about/">About</a>
-            </li>
-            <li>
-                <a href="/projects/" class="active">Projects</a>
-            </li>
-            <li>
-                <a href="/blog/">Blog</a>
-            </li>
-            <li>
-                <a href="/misc/">Misc</a>
-            </li>
-            <li style="float: right">
-                <a href="/contact/">Contact</a>
-            </li>
-        </ul>
-    </div>
-</div>
+{% endblock %}
 
-<div class="main">
+{% block content %}
     <h1>My Projects</h1><hr>
-    <p>Below you can find some of my programming and modelling projects, attached are links the the project site. Projects marked with the <i class="fas fa-archive"></i> symbol have been archived and no longer worked on</p>
+    <p>Below you can find some of my programming and modelling projects, attached are links the project site.
+{#        Projects marked with the <i class="fas fa-archive"></i> symbol have been archived and no longer worked on#}
+    </p>
 
-    <div>
-        <b>Filter: </b>
-        <input type="checkbox" id="archived-check" name="archived-check" onclick="show_archived()" checked><label for="archived-check">Show Archived Projects</label>
-    </div><br>
+{#    <div>#}
+{#        <b>Filter: </b>#}
+{#        <input type="checkbox" id="archived-check" name="archived-check" onclick="show_archived()"><label for="archived-check" title="Requires JavaScript">Show Archived Projects</label>#}
+{#    </div><br>#}
 
     <div class="row">
-        {% for item in projects %}<div class="column{% if item.archived %} archived{% endif %}">
-            <div class="card {% if item.image is defined %} card-img{% endif %}">
-                {% if item.image is defined %}<img class="card-image" src="{{ url_for('static',filename=('assets/'+item.image)) }}">{% endif %}
-                <h3>{{ item.name }}{% if item.archived %} <i class="fas fa-archive"></i>{% endif %}</h3>
+        {% for item in projects %}
+            <div class="project {% if item.archived %} archived{% endif %}"  style="{% if item.archived %}display: none{% endif %}">
+                <h3>{{ item.name }}{% if item.archived %} <i class="fas fa-archive" title="Archived"></i>{% endif %}</h3>
+{#                {% if item.image is defined %}<img class="card-image" src="{{ url_for('static',filename=('assets/'+item.image)) }}">{% endif %}#}
                 <p>{{ item.description|safe }}<br>
                     <small class="frameworks">{{ item.frameworks }}</small>
                 </p>
-            {% if item.github is defined %}<a href="https://github.com/{{ item.github }}" class="link-button" target="_blank" title="{{ item.github }}"><i class="fab fa-github"></i> GitHub</a>{% endif %}
-            {% if item.thingiverse is defined %}<a href="{{ item.thingiverse }}" class="link-button" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" height="14px" width="14px" style="filter: invert(100%)"> Thingiverse</a>{% endif %}
-            {% if item.devpost is defined %}<a href="{{ item.devpost }}" class="link-button" target="_blank"><img src="{{ url_for('static', filename='assets/devpost.png') }}" height="14px" width="14px" style="filter: invert(100%)"> Devpost</a>{% endif %}
-            {% if item.link is defined %}<a href="{{ item.link }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Link</a>{% endif %}
-            {% if item.github is defined %}<span class="github-stats" id="github-stats-{{ item.github }}"> </span>{% endif %}
+                {% if item.github is defined %}<a href="https://github.com/{{ item.github }}" class="link-button" target="_blank" title="{{ item.github }}"><i class="fab fa-github"></i> GitHub</a>{% endif %}
+                {% if item.thingiverse is defined %}<a href="{{ item.thingiverse }}" class="link-button" target="_blank"><i class="fa-solid fa-cube"></i> Thingiverse</a>{% endif %}
+                {% if item.devpost is defined %}<a href="{{ item.devpost }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Devpost</a>{% endif %}
+                {% if item.link is defined %}<a href="{{ item.link }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Link</a>{% endif %}
+                {% if item.github is defined %}<span class="github-stats" id="github-stats-{{ item.github }}"> </span>{% endif %}
+{#                {% if not loop.last %}<hr>{% endif %}#}
             </div>
-        </div>{% endfor %}
+        {% endfor %}
     </div>
-</div>
+{% endblock %}
 
-<div style="height: 70px;"></div>
-<footer>
-    <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
-    <a href="https://www.thingiverse.com/userblackbox/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
-    <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
-    <p style="font-size: 12px;">@ 2022 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
-</footer>
-
-<script>
-    //archived projects hider
-    function show_archived(){
-        if(!document.getElementById("archived-check").checked){
-            var elements = document.getElementsByClassName('archived');
-            for(var i=0;i<elements.length;i++){
-                elements[i].style.display = 'none';
-            }
-        }else{
-            var elements = document.getElementsByClassName('archived');
-            for(var i=0;i<elements.length;i++){
-                elements[i].style.display = 'block';
+{% block scripts %}
+    <script>
+        //archived projects hider
+        function show_archived(){
+            if(!document.getElementById("archived-check").checked){
+                var elements = document.getElementsByClassName('archived');
+                for(var i=0;i<elements.length;i++){
+                    elements[i].style.display = 'none';
+                }
+            }else{
+                var elements = document.getElementsByClassName('archived');
+                for(var i=0;i<elements.length;i++){
+                    elements[i].style.display = 'block';
+                }
             }
         }
-    }
-    show_archived();
-</script>
-<script src="{{ url_for('static', filename="axios.min.js") }}"></script>
-<script>
-    //github stats fetcher
-    async function fetch_github_stats(repo){
-        var request = await axios.get("https://api.github.com/repos/"+repo, {headers:{}});
-        var data = request.data;
-        var element = document.getElementById("github-stats-"+repo);
-        element.innerHTML = "";
-        if(data.forks_count > 0) {
-            element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/network/members\"><i class=\"fas fa-code-branch\"></i> " + data.forks_count + "</a>";
+        show_archived();
+    </script>
+    <script src="{{ url_for('static', filename="axios.min.js") }}"></script>
+    <script>
+        //github stats fetcher
+        async function fetch_github_stats(repo){
+            var request = await axios.get("https://api.github.com/repos/"+repo, {headers:{}});
+            var data = request.data;
+            var element = document.getElementById("github-stats-"+repo);
+            element.innerHTML = "";
+            if(data.forks_count > 0) {
+                element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/network/members\"><i class=\"fas fa-code-branch\"></i> " + data.forks_count + "</a>";
+                if(data.stargazers_count > 0)
+                    element.innerHTML += "&ensp;";
+            }
             if(data.stargazers_count > 0)
-                element.innerHTML += "&ensp;";
+                element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/stargazers\"><i class=\"far fa-star\"></i> " + data.stargazers_count + "</a>";
         }
-        if(data.stargazers_count > 0)
-            element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/stargazers\"><i class=\"far fa-star\"></i> " + data.stargazers_count + "</a>";
-    }
-    {% for item in projects %}{% if item.github is defined %}
-    fetch_github_stats("{{ item.github }}");
-    {% endif %}{% endfor %}
-</script>
-</body>
-</html>
+        {% for item in projects %}{% if item.github is defined %}
+        fetch_github_stats("{{ item.github }}");
+        {% endif %}{% endfor %}
+    </script>
+{% endblock %}

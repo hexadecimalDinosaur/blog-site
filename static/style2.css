@@ -1,0 +1,282 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    --custom-bg: #e1e1e1;
+    overflow: hidden;
+}
+body {
+    background: #008083;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    overflow: hidden;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/static/ubuntu-font-family-0.83/Ubuntu-R.ttf") format("truetype");
+}
+
+.window {
+    background: var(--custom-bg);
+    font-size: 13px;
+}
+.title-bar {
+    font-size: 13px;
+}
+.status-bar {
+    flex-wrap: wrap;
+}
+menu[role="tablist"] {
+    padding-top: 5px;
+}
+
+#main-window {
+    flex: 1;
+    --window-horizontal-margin: 7.5%;
+    margin: 1em var(--window-horizontal-margin);
+    max-width: calc(100vw - calc(2 * var(--window-horizontal-margin)));
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+@media screen and (max-width: 1000px) {
+    #main-window {
+        --window-horizontal-margin: 5%;
+    }
+}
+@media screen and (max-width: 700px) {
+    #main-window {
+        --window-horizontal-margin: 2.5%;
+    }
+}
+
+.main {
+    font-family: Arial, sans-serif;
+    background: white;
+    box-shadow: rgb(255, 255, 255) -1px -1px 0px 0px inset, rgb(128, 128, 128) 1px 1px 0px 0px inset, rgb(223, 223, 223) -2px -2px 0px 0px inset, rgb(10, 10, 10) 2px 2px 0px 0px inset;
+    --main-content-padding: 20px;
+    padding: var(--main-content-padding);
+    padding-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex: 1;
+    line-height: 1.5em;
+}
+.main h1 {
+    font-size: 24px;
+}
+.main h2 {
+    font-size: 18px;
+}
+.main h3 {
+    font-size: 16px;
+}
+.main a {
+    text-decoration: none;
+    color: #1f73f0;
+}
+.main a:visited {
+    color: #666666;
+    text-decoration: none;
+}
+.main a:hover {
+    color: #666666;
+    text-decoration: underline;
+}
+.main table {
+    font-family: initial;
+    font-size: initial;
+    position: initial;
+    text-align: initial;
+    white-space: nowrap;
+    background-color: initial;
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+.main thead, .main tr, .main th, .main td {
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+}
+.main thead, .main tr {
+    box-sizing: border-box;
+}
+table > thead > tr > * {
+  position: initial;
+  top: initial;
+  height: initial;
+  box-shadow: initial;
+  background: initial;
+  box-sizing: initial;
+  font-weight: initial;
+  padding: initial;
+}
+
+menu[role="tablist"] > li[aria-selected="true"] {
+    background: var(--custom-bg);
+}
+
+#content-tabpanel {
+    box-shadow: rgb(223, 223, 223) 0px 1px 0px 0px inset, rgb(255, 255, 255) 0px 2px 0px 0px inset;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+#content-window-body {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+
+#rss-button {
+    background: orange;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgb(10, 10, 10) -1px -1px 0px 0px inset, rgb(255, 255, 255) 1px 1px 0px 0px inset;
+}
+#rss-button a {
+    text-decoration: none;
+    color: white;
+}
+
+.responsive-table {
+    display: block;
+    min-width: 100%;
+    overflow-x: scroll;
+}
+
+/* codehilite adjustments */
+
+.code {
+    overflow-x: hidden;
+    width: min-content;
+}
+.code pre {
+    box-shadow: initial;
+}
+.codehilite {
+    overflow-x: hidden;
+    border: #aaaaaa;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+.codehilitetable {
+    overflow-x: hidden;
+    width: auto;
+    display: block;
+}
+.codehilitetable tbody, .codehilitetable tr {
+    overflow-x: hidden;
+    width: auto;
+    display: block;
+}
+.codehilite tr {
+    overflow-x: scroll;
+}
+.linenodiv pre {
+    box-shadow: initial;
+}
+
+
+/* 98.css icon path adjustments */
+
+.title-bar-controls button[aria-label="Minimize"] {
+    background-image: url("/static/98.css/icon/minimize.svg")
+}
+
+.title-bar-controls button[aria-label="Maximize"] {
+    background-image: url("/static/98.css/icon/maximize.svg")
+}
+
+.title-bar-controls button[aria-label="Restore"] {
+    background-image: url("/static/98.css/icon/restore.svg")
+}
+
+.title-bar-controls button[aria-label="Help"] {
+    background-image: url("/static/98.css/icon/help.svg")
+}
+
+.title-bar-controls button[aria-label="Close"] {
+    background-image: url("/static/98.css/icon/close.svg")
+}
+
+fieldset {
+    border-image: url("/static/98.css/icon/groupbox-border.svg") 2;
+}
+
+input[type="radio"] + label::before {
+    background: url("/static/98.css/icon/radio-border.svg");
+}
+
+input[type="radio"]:active + label::before {
+  background: url("/static/98.css/icon/radio-border-disabled.svg");
+}
+
+input[type="radio"]:checked + label::after {
+    background: url("/static/98.css/icon/radio-dot.svg");
+}
+
+input[type="radio"][disabled] + label::before {
+  background: url("/static/98.css/icon/radio-border-disabled.svg");
+}
+
+input[type="radio"][disabled]:checked + label::after {
+  background: url("/static/98.css/icon/radio-dot-disabled.svg");
+}
+
+input[type="checkbox"]:checked + label::after {
+    background: url("/static/98.css/icon/checkmark.svg");
+}
+
+input[type="checkbox"][disabled]:checked + label::after {
+  background: url("/static/98.css/icon/checkmark-disabled.svg");
+}
+
+select {
+    background-image: url("/static/98.css/icon/button-down.svg");
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background: url("/static/98.css/icon/indicator-horizontal.svg");
+}
+
+input[type="range"].has-box-indicator::-webkit-slider-thumb {
+    background: url("/static/98.css/icon/indicator-rectangle-horizontal.svg");
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: url("/static/98.css/icon/indicator-horizontal.svg");
+}
+
+input[type="range"].has-box-indicator::-moz-range-thumb {
+    background: url("/static/98.css/icon/indicator-rectangle-horizontal.svg");
+}
+
+select:active {
+  background-image: url("/static/98.css/icon/button-down-active.svg");
+}
+
+::-webkit-scrollbar-track {
+  background-image: url("/static/98.css/icon/scrollbar-background.svg");
+}
+
+::-webkit-scrollbar-button:vertical:start {
+  background-image: url("/static/98.css/icon/button-up.svg");
+}
+::-webkit-scrollbar-button:vertical:end {
+  background-image: url("/static/98.css/icon/button-down.svg");
+}
+::-webkit-scrollbar-button:horizontal:start {
+  background-image: url("/static/98.css/icon/button-left.svg");
+}
+::-webkit-scrollbar-button:horizontal:end {
+  background-image: url("/static/98.css/icon/button-right.svg");
+}

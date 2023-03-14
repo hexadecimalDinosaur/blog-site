@@ -1,53 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <meta name="robots" content="noindex">
-	<meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="author" content="Ivy Fan-Chiang">
-        <meta itemprop="name" content="Ivy Fan-Chiang">
-        <meta itemprop="description" content="">
-	<title>Achievements - Ivy Fan-Chiang</title>
-        <style>
-            @import url("https://use.typekit.net/rjh1tmg.css");
-        </style>
-        <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-        <div id="navbar">
-            <div id="wrap">
-                <ul class="navbar">
-                    <li>
-                        <a class="title" href="/">Ivy Fan-Chiang</a>
-                    </li>
-                    <li>
-                        <a href="/about/">About</a>
-                    </li>
-                    <li>
-                        <a href="/projects/">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="/misc/">Misc</a>
-                    </li>
-                    <li style="float: right">
-                        <a href="/contact/">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="main">
-            <h1>Achievements</h1><hr>
+{% block content %}
+    <h1>Achievements</h1><hr>
             <h2>Timeline</h2>
             <p>This is a timeline of my projects and achievements</p>
             <h3>2022</h3>
             <ul>
-		<li>Won <a href="https://www.ictc-ctic.ca/team-unavailable-legal-reasons-north-york-ontario-wins-cybertitan-v-national-finals/">CyberTitan</a> V Canadian National Finals as part of team <code>Unavailable for Legal Reasons</code></li> 
+		<li>Won <a href="https://www.ictc-ctic.ca/team-unavailable-legal-reasons-north-york-ontario-wins-cybertitan-v-national-finals/">CyberTitan</a> V Canadian National Finals as part of team <code>Unavailable for Legal Reasons</code></li>
 		<li>Competed in picoCTF as part of team <code>parity</code> and finished first in the Canadian CANHACK division</li>
 		<li>Competed in the CyberPatriot XIV American National Finals as part of team <code>Unavailable for Legal Reasons</code> as the only Canadian team to qualify</li>
                 <li>Got the 1st Place State Award for Canada in CyberPatriot XIV Open Division with team <code>Unavailable for Legal Reasons</code></li>
@@ -65,7 +24,7 @@
                 <li>Joined <a href="https://ctftime.org/team/127228">Daemon Summoners</a> CTF team and participated in a many jeopardy and attack & defence CTFs with the team</li>
                 <li>Achieved honor roll on <a href="https://www.exploravision.org/2020-honorable-mentions">ExploraVision 2020</a> for write up on quantum cryptography created in science class</li>
                 <li>Participated in <a href="https://cybertitan.ca">CyberTitan</a> III National Finals as part of school team <code>404:team_not_found</code> and finished <a href="https://www.ictc-ctic.ca/ca-prime-wins-cybertitan-iii/">3rd</a>. Was featured in <a href="https://www.toronto.com/news-story/10021105-cybertitan-competition-educates-youth-in-cybersecurity/">toronto.com</a></li>
-                <li>Started <a href="https://github.com/UserBlackBox/octoprint-cli">octoprint-cli</a> project, a command line client for OctoPrint 3D printer servers</li>
+                <li>Started <a href="https://github.com/hexadecimalDinosaur/octoprint-cli">octoprint-cli</a> project, a command line client for OctoPrint 3D printer servers</li>
                 <li>Started posting CAD designs on <a href="https://www.thingiverse.com/userblackbox/designs">Thingiverse</a>.</li>
                 <li>Achieved honor roll on Junior <a href="https://cemc.math.uwaterloo.ca/contests/computing.html">Canadian Computing Competition</a> 2020.</li>
             </ul>
@@ -78,14 +37,4 @@
 	    <h2>Badges</h2>
             <a href="https://openbadgepassport.com/app/badge/info/346446" target="_blank"><img style="max-height: 200px" src="{{ url_for('static', filename="badges/Ryerson DMZ - CanHack 2021 Completion - 2021-04-17.png") }}"></a>
             <a href="https://openbadgepassport.com/app/badge/info/235803" target="_blank"><img style="max-height: 200px" src="{{ url_for('static', filename="badges/ICTC-CTIC - CyberTitan III Finalist - 2020-06-09 - Badge.png") }}"></a>
-        </div>
-
-        <div style="height: 70px;"></div>
-        <footer>
-            <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
-            <a href="https://www.thingiverse.com/userblackbox/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
-            <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
-            <p style="font-size: 12px;">@ 2022 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
-        </footer>
-    </body>
-</html>
+{% endblock %}

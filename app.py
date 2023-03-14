@@ -23,45 +23,33 @@ cache = Cache(app)
 
 @app.route('/')
 def index():
-    if request.MOBILE:
-        return render_template('mobile/index.html')
-    return render_template('index.html')
+    return render_template('index.html', title="Home")
 
 @app.route('/contact/')
 @app.route('/contact')
 def contact():
-    if request.MOBILE:
-        return render_template('mobile/contact.html')
-    return render_template('contact.html')
+    return render_template('contact.html', title="Contact")
 
 @app.route('/projects/')
 @app.route('/projects')
 def projects():
     data = json.load(open('projects.json', 'r'))
-    if request.MOBILE:
-        return render_template('mobile/projects.html', projects=data['projects'])
-    return render_template('projects.html', projects=data['projects'])
+    return render_template('projects.html', projects=data['projects'], title="Projects")
 
 @app.route('/about/')
 @app.route('/about')
 def about():
-    if request.MOBILE:
-        return render_template('mobile/index.html')
-    return render_template('index.html')
+    return render_template('about.html', title="About Me")
 
 @app.route('/achievements/')
 @app.route('/achievements')
 def timeline():
-    if request.MOBILE:
-        return render_template('mobile/timeline.html')
-    return render_template('timeline.html')
+    return render_template('timeline.html', title="Achievements")
 
 @app.route('/misc/')
 @app.route('/misc')
 def misc():
-    if request.MOBILE:
-        return render_template('mobile/misc.html', content=to_html('content/misc.md'))
-    return render_template('misc.html', content=to_html('content/misc.md'))
+    return render_template('misc.html', content=to_html('content/misc.md'), title="Misc")
 
 @app.route('/blog/')
 @app.route('/blog')
@@ -72,9 +60,7 @@ def blog_home():
         articles.append((content[f]['title'], content[f]['date'], f))
     articles.sort(key=lambda f:f[1])
     articles = articles[::-1]
-    if request.MOBILE:
-        return render_template('mobile/blog.html', articles=articles)
-    return render_template('blog.html', articles=articles)
+    return render_template('blog.html', articles=articles, title="Blog")
 
 @app.route('/blog/<slug>/')
 @app.route('/blog/<slug>')
@@ -87,9 +73,7 @@ def article(slug):
     except FileNotFoundError:
         abort(404)
     data = articles[slug]
-    if request.MOBILE:
-        return render_template('mobile/article.html', title=data['title'], date=data['date'], content=html)
-    return render_template('article.html', title=data['title'], date=data['date'], content=html)
+    return render_template('article.html', title=data['title'], date=data['date'], content=html, slug=slug)
 
 @app.route('/reference/<slug>/')
 @app.route('/reference/<slug>')
@@ -101,9 +85,7 @@ def cheatsheet(slug):
         html, toc = to_html_toc('content/'+sheets[slug]['file'])
     except FileNotFoundError:
         abort(404)
-    if request.MOBILE:
-        return render_template('mobile/reference.html', title=sheets[slug]['title'], content=html, toc=toc)
-    return render_template('reference.html', title=sheets[slug]['title'], content=html, toc=toc)
+    return render_template('reference.html', title=sheets[slug]['title'], content=html, toc=toc, slug=slug)
 
 @app.route('/rss.xml')
 @cache.cached(timeout=60)
@@ -138,9 +120,7 @@ def sitemap():
 
 @app.errorhandler(404)
 def not_found(e):
-    if request.MOBILE:
-        return render_template('mobile/404.html')
-    return render_template('404.html')
+    return render_template('404.html', title="404")
 
 if __name__ == '__main__':
     app.run()

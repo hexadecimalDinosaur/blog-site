@@ -1,61 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <meta name="robots" content="noindex">
-	<meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="author" content="Ivy Fan-Chiang">
-        <meta itemprop="name" content="Ivy Fan-Chiang">
-        <meta itemprop="description" content="">
-        <title>Contact - Ivy Fan-Chiang</title>
-        <style>
-            @import url("https://use.typekit.net/rjh1tmg.css");
-        </style>
-        <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-        <div id="navbar">
-            <div id="wrap">
-                <ul class="navbar">
-                    <li>
-                        <a class="title" href="/">Ivy Fan-Chiang</a>
-                    </li>
-                    <li>
-                        <a href="/about/">About</a>
-                    </li>
-                    <li>
-                        <a href="/projects/">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="/misc/">Misc</a>
-                    </li>
-                    <li style="float: right">
-                        <a href="/contact/" class="active">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="main">
-            <h1>Contact Me</h1><hr>
-            <i class="far fa-envelope"></i> <b>Email: </b><a href="mailto:contact@ivyfanchiang.ca">contact@ivyfanchiang.ca</a><br>
-	    <i class="far fa-comments"></i> <b>Matrix: </b><a href="https://matrix.to/#/@userblackbox:matrix.org">@userblackbox:matrix.org</a><br>
-            <i class="fab fa-keybase"></i> <b>Keybase: </b><a href="https://keybase.io/userblackbox" target="_blank">userblackbox</a>
-            <h3>GPG Public Keys</h2>
-                <i class="fas fa-key"></i> <a href="https://files.ivyfanchiang.ca/contact%40ivyfanchiang.ca_C8BAE5F22A33BA9E.asc">contact@ivyfanchiang.ca - C8BAE5F22A33BA9E</a><br>
-        </div>
-
-        <div style="height: 70px;"></div>
-        <footer>
-            <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
-            <a href="https://www.thingiverse.com/userblackbox/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
-            <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
-            <p style="font-size: 12px;">@ 2022 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
-        </footer>
-    </body>
-</html>
+{% block content %}
+    <h1>Contact Me</h1><hr>
+    <i class="far fa-envelope"></i> <b>Email: </b><a href="mailto:contact@ivyfanchiang.ca">contact@ivyfanchiang.ca</a><br>
+    <i class="far fa-comments"></i> <b>Matrix: </b><a href="https://matrix.to/#/@userblackbox:matrix.org">@userblackbox:matrix.org</a><br>
+    <i class="fab fa-keybase"></i> <b>Keybase: </b><a href="https://keybase.io/userblackbox" target="_blank">userblackbox</a><br>
+    <i class="fa-solid fa-circle-nodes"></i> Mastodon: <a href="https://masto.ai/@hexadecimal_dinosaur" target="_blank">@hexadecimal_dinosaur@masto.ai</a><br>
+    <h3>GPG Public Keys</h2>
+        <i class="fas fa-key"></i> <a href="https://files.ivyfanchiang.ca/contact%40ivyfanchiang.ca_C8BAE5F22A33BA9E.asc">contact@ivyfanchiang.ca - C8BAE5F22A33BA9E</a><br>
+{% endblock %}

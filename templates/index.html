@@ -1,63 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <meta name="robots" content="noindex">
-	<meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="author" content="Ivy Fan-Chiang">
-        <meta itemprop="name" content="Ivy Fan-Chiang">
-        <meta itemprop="description" content="">
-	    <meta name="google-site-verification" content="K4gvo93cphOmnBzNTkQaeoUE_w3dHqIPj_NtDSf90xg" />
-	    <meta name="msvalidate.01" content="66A4373E8A8594D7BCCDBECFCB41C531" />
-        <title>About - Ivy Fan-Chiang</title>
-        <style>
-            @import url("https://use.typekit.net/rjh1tmg.css");
-        </style>
-        <script src="https://kit.fontawesome.com/f5ffdce5b9.js" crossorigin="anonymous"></script> <!--Font Awesome Symbols-->
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-        <div id="navbar">
-            <div id="wrap">
-                <ul class="navbar">
-                    <li>
-                        <a class="title" href="/">Ivy Fan-Chiang</a>
-                    </li>
-                    <li>
-                        <a href="/about/" class="active">About</a>
-                    </li>
-                    <li>
-                        <a href="/projects/">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="/misc/">Misc</a>
-                    </li>
-                    <li style="float: right">
-                        <a href="/contact/">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="main">
-            <h1>About Me</h1><hr>
-            <p>Hello, I'm Ivy Fan-Chiang. I'm an undergraduate student studying Systems Design Engineering at the University of Waterloo. I am interested in cybersecurity, computer science, 3D modelling, and music. I mainly do programming in Python but also use Java, JavaScript, Processing, and Bash. I also do 3D modelling in Autodesk Fusion 360, AutoCAD, and Sketchup. A timeline of my achievements and projects can be found <a href="/achievements/">here</a>.</p>
-            <p>You might be interested to look at some of my programming and modelling projects <a href="/projects/">here</a>. Many of my programming projects can be found on GitHub and my modelling projects can be found on Thingiverse.</p>
-            <i class="fab fa-github"></i> GitHub: <a href="https://github.com/UserBlackBox" target="_blank">UserBlackBox</a><br>
-            <img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" height="15px" style="vertical-align:center;"> Thingiverse: <a href="https://www.thingiverse.com/userblackbox/about">userblackbox</a><br>
-            <img src="{{ url_for('static', filename='assets/devpost.png') }}" height="15px" style="vertical-align:center;"> Devpost: <a href="https://devpost.com/UserBlackBox">UserBlackBox</a>
-        </div>
-
-        <div style="height: 70px;"></div>
-        <footer>
-            <a href="https://github.com/UserBlackBox" target="_blank"><img src="{{ url_for('static', filename='assets/GitHub-Mark-32px.png') }}" alt="GitHub" height="32" width="32"></a>
-		    <a href="https://www.thingiverse.com/userblackbox/about" target="_blank"><img src="{{ url_for('static', filename='assets/Thingiverse-Icon.png') }}" alt="Thingiverse" height="32" width="32"></a>
-            <a href="mailto:userblackbox@tutanota.com" style="color: black; text-decoration: none;" target="_blank"><img src="{{ url_for('static', filename='assets/envelope-regular.svg') }}" height="32" width="32"></a>
-            <p style="font-size: 12px;">@ 2022 Ivy Fan-Chiang | <a href="https://github.com/UserBlackBox/blog-site">Source code</a> available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
-        </footer>
-    </body>
-</html>
+{% block content %}
+    <h1>Hi!</h1><hr>
+    <p>
+        I'm Ivy, a Systems Design Engineering Student at the University of Waterloo.
+        This site is my blog and portfolio with information
+        <a href="/about/">about me</a>, <a href="/projects/">my projects</a>,
+        <a href="/blog/">random blog posts</a>, and <a href="/contact/">my contact information</a>.
+    </p>
+    <p>You might be interested to look at some of my programming and modelling projects <a href="/projects/">here</a>. Many of my programming projects can be found on GitHub and my modelling projects can be found on Printables.</p>
+    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/hexadecimalDinosaur" target="_blank">hexadecimalDinosaur</a><br>
+    <i class="fa-solid fa-cube"></i> Prusa Printables: <a href="https://www.printables.com/social/333155-userblackbox/models" target="_blank">userblackbox</a><br>
+    <i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ivy-fan-chiang/" target="_blank">Ivy Fan-Chiang</a><br>
+    <i class="fa-solid fa-circle-nodes"></i> Mastodon: <a href="https://masto.ai/@hexadecimal_dinosaur" target="_blank">@hexadecimal_dinosaur@masto.ai</a><br>
+    <i class="fa-regular fa-file"></i> Resume: <a href="https://files.ivyfanchiang.ca/resume.pdf" target="_blank">files.ivyfanchiang.ca</a><br>
+{% endblock %}
