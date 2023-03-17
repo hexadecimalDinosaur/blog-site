@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='98.css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
@@ -23,33 +23,35 @@
                     <button aria-label="Close"></button>
                 </div>
             </div>
-            <menu role="tablist">
-                <li role="tab" aria-selected="{{ "true" if title == "Home" else "false" }}"><a href="/">Home</a></li>
-                <li role="tab" aria-selected="{{ "true" if title == "About Me" else "false" }}"><a href="/about/">About</a></li>
-                <li role="tab" aria-selected="{{ "true" if title == "Projects" else "false" }}"><a href="/projects/">Projects</a></li>
-                <li role="tab" aria-selected="{{ "true" if title == "Blog" else "false" }}"><a href="/blog/">Blog</a></li>
-                <li role="tab" aria-selected="{{ "true" if title == "Misc" else "false" }}"><a href="/misc/">Misc</a></li>
-                <li role="tab" aria-selected="{{ "true" if title == "Contact" else "false" }}"><a href="/contact/">Contact</a></li>
-            </menu>
+            <div role="navigation">
+                <menu role="tablist">
+                    <li role="tab" aria-selected="{{ "true" if title == "Home" else "false" }}"><a href="/">Home</a></li>
+                    <li role="tab" aria-selected="{{ "true" if title == "About Me" else "false" }}"><a href="/about/">About</a></li>
+                    <li role="tab" aria-selected="{{ "true" if title == "Projects" else "false" }}"><a href="/projects/">Projects</a></li>
+                    <li role="tab" aria-selected="{{ "true" if title == "Blog" else "false" }}"><a href="/blog/">Blog</a></li>
+                    <li role="tab" aria-selected="{{ "true" if title == "Misc" else "false" }}"><a href="/misc/">Misc</a></li>
+                    <li role="tab" aria-selected="{{ "true" if title == "Contact" else "false" }}"><a href="/contact/">Contact</a></li>
+                </menu>
+            </div>
             <div class="window" role="tabpanel" id="content-tabpanel">
                 <div class="window-body" id="content-window-body">
-                    <div class="main">
+                    <div class="main" role="main">
                         {% block content %} {% endblock %}
                     </div>
                 </div>
             </div>
-            <div class="status-bar">
-                <p class="status-bar-field"><a href="https://github.com/hexadecimalDinosaur" target="_blank" title="hexadecimalDinosaur">
-                    <i class="fab fa-github"></i> GitHub
+            <footer class="status-bar">
+                <p class="status-bar-field"><a href="https://github.com/hexadecimalDinosaur" target="_blank" title="hexadecimalDinosaur" aria-label="GitHub Profile">
+                    <i class="fab fa-github" alt="GitHub Logo"></i> GitHub
                 </a></p>
-                <p class="status-bar-field"><a href="mailto:contact@ivyfanchiang.ca" target="_blank" title="contact@ivyfanchiang.ca">
-                    <i class="far fa-envelope"></i> Email
+                <p class="status-bar-field"><a href="mailto:contact@ivyfanchiang.ca" target="_blank" title="contact@ivyfanchiang.ca" aria-label="Email Address">
+                    <i class="far fa-envelope" alt="Email Icon"></i> Email
                 </a></p>
-                <p class="status-bar-field"><a href="http://ivyfc7cpzv3uw3g2s36satpxbbdn545mjuwxji2ltkb5s4aj2lqm4kyd.onion/" title="Spooky Darkweb 👻">
-                    <i class="fa-solid fa-link"></i> Tor Onion Service
+                <p class="status-bar-field"><a href="http://ivyfc7cpzv3uw3g2s36satpxbbdn545mjuwxji2ltkb5s4aj2lqm4kyd.onion/" title="Spooky Darkweb 👻" aria-label="Tor onion link for this site">
+                    <i class="fa-solid fa-link" alt="Link Icon"></i> Tor Onion Service
                 </a></p>
                 <p class="status-bar-field">
-                    <a href="https://github.com/hexadecimalDinosaur/blog-site" target="_blank" title="hexadecimalDinosaur/blog-site"><i class="fa-solid fa-code"></i> Source code</a>
+                    <a href="https://github.com/hexadecimalDinosaur/blog-site" target="_blank" title="hexadecimalDinosaur/blog-site" aria-label="Link to source code of this site"><i class="fa-solid fa-code"></i> Source code</a>
                     available under
                     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License">
                         CC BY-NC-SA 4.0
@@ -58,7 +60,7 @@
                 <p class="status-bar-field">
                     @ 2022 Ivy Fan-Chiang
                 </p>
-            </div>
+            </footer>
         </div>
     </body>
     {% block scripts %}{% endblock %}
