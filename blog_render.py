@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 def to_html(file):
     f = open(file,'r')
     md = f.read()
-    return markdown.markdown(md, extensions=['codehilite', 'extra', 'smarty'], extension_configs={
+    return markdown.markdown(md, extensions=['codehilite', 'extra', 'smarty', 'mdx_truly_sane_lists', 'footnotes'], extension_configs={
         'codehilite':{
             'linenums':True,
             'guess_lang':False
@@ -17,7 +17,7 @@ def to_html(file):
 def to_html_toc(file):
     f = open(file,'r')
     md = f.read()
-    convert = markdown.Markdown(extensions=['toc', 'codehilite', 'extra', 'smarty'], extension_configs={
+    convert = markdown.Markdown(extensions=['toc', 'codehilite', 'extra', 'smarty', 'mdx_truly_sane_lists', 'footnotes'], extension_configs={
         'codehilite':{
             'linenums':True,
             'guess_lang':False
@@ -35,7 +35,7 @@ def to_html_toc(file):
 def to_html_noclass(file):
     f = open(file,'r')
     md = f.read()
-    return markdown.markdown(md, extensions=['codehilite', 'extra', 'smarty'], extension_configs={
+    return markdown.markdown(md, extensions=['codehilite', 'extra', 'smarty', 'mdx_truly_sane_lists', 'footnotes'], extension_configs={
         'codehilite':{
             'linenums':True,
             'guess_lang':False,
