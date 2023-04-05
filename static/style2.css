@@ -26,6 +26,11 @@ body {
 .title-bar {
     font-size: 13px;
 }
+.title-bar-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 .status-bar {
     flex-wrap: wrap;
 }
