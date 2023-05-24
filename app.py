@@ -5,7 +5,6 @@ from blog_render import to_html, to_html_noclass, to_html_toc
 import json
 import datetime
 import pytz
-from flask_mobility import Mobility
 from flask_caching import Cache
 
 url = 'https://ivyfanchiang.ca'
@@ -18,7 +17,6 @@ config = {
 
 app = Flask(__name__)
 app.config.from_mapping(config)
-Mobility(app)
 cache = Cache(app)
 
 @app.route('/')
