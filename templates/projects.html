@@ -43,15 +43,15 @@
     <div class="row">
         {% for item in projects %}
             <div class="project {% if item.archived %} archived{% endif %}"  style="{% if item.archived %}display: none{% endif %}">
-                <h3>{{ item.name }}{% if item.archived %} <i class="fas fa-archive" title="Archived"></i>{% endif %}</h3>
+                <h3>{{ item.name }}{% if item.archived %} <i class="icon-archive" title="Archived"></i>{% endif %}</h3>
 {#                {% if item.image is defined %}<img class="card-image" src="{{ url_for('static',filename=('assets/'+item.image)) }}">{% endif %}#}
                 <p>{{ item.description|safe }}<br>
                     <small class="frameworks">{{ item.frameworks }}</small>
                 </p>
-                {% if item.github is defined %}<a href="https://github.com/{{ item.github }}" class="link-button" target="_blank" title="{{ item.github }}"><i class="fab fa-github"></i> GitHub</a>{% endif %}
-                {% if item.thingiverse is defined %}<a href="{{ item.thingiverse }}" class="link-button" target="_blank"><i class="fa-solid fa-cube"></i> Thingiverse</a>{% endif %}
-                {% if item.devpost is defined %}<a href="{{ item.devpost }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Devpost</a>{% endif %}
-                {% if item.link is defined %}<a href="{{ item.link }}" class="link-button" target="_blank"><i class="fas fa-link"></i> Link</a>{% endif %}
+                {% if item.github is defined %}<a href="https://github.com/{{ item.github }}" class="link-button" target="_blank" title="{{ item.github }}"><i class="icon-github-alt"></i> GitHub</a>{% endif %}
+                {% if item.thingiverse is defined %}<a href="{{ item.thingiverse }}" class="link-button" target="_blank"><i class="icon-cube"></i> Thingiverse</a>{% endif %}
+                {% if item.devpost is defined %}<a href="{{ item.devpost }}" class="link-button" target="_blank"><i class="icon-link"></i> Devpost</a>{% endif %}
+                {% if item.link is defined %}<a href="{{ item.link }}" class="link-button" target="_blank"><i class="icon-link"></i> Link</a>{% endif %}
                 {% if item.github is defined %}<span class="github-stats" id="github-stats-{{ item.github }}"> </span>{% endif %}
 {#                {% if not loop.last %}<hr>{% endif %}#}
             </div>
@@ -86,12 +86,12 @@
             var element = document.getElementById("github-stats-"+repo);
             element.innerHTML = "";
             if(data.forks_count > 0) {
-                element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/network/members\"><i class=\"fas fa-code-branch\"></i> " + data.forks_count + "</a>";
+                element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/network/members\"><i class=\"icon-code-fork\"></i> " + data.forks_count + "</a>";
                 if(data.stargazers_count > 0)
                     element.innerHTML += "&ensp;";
             }
             if(data.stargazers_count > 0)
-                element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/stargazers\"><i class=\"far fa-star\"></i> " + data.stargazers_count + "</a>";
+                element.innerHTML += "<a target=\"_blank\" href=\"" + data.html_url + "/stargazers\"><i class=\"icon-star-o\"></i> " + data.stargazers_count + "</a>";
         }
         {% for item in projects %}{% if item.github is defined %}
         fetch_github_stats("{{ item.github }}");

@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Blog</h1><hr>
         <p>Personal blog where I occasionally write about interesting programing tidbits, malware analysis, CTFs, and other topics.</p>
-        <div id="rss-button"><a href="{{ url_for('rss') }}"><i class="fas fa-rss"></i> RSS Feed</a></div>
+        <div id="rss-button"><a href="{{ url_for('rss') }}"><i class="icon-rss"></i> RSS Feed</a></div>
         {% if not articles|length %}
             <p>No articles yet...</p>
         {% else %}
