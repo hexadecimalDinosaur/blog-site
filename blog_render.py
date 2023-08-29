@@ -12,6 +12,9 @@ def to_html(md: str, md5: bytes, content_cache: dict):
         'codehilite': {
             'linenums': True,
             'guess_lang': False
+        },
+        'markdown_katex': {
+            'insert_fonts_css': False
         }
     })
 
@@ -22,6 +25,9 @@ def to_html_toc(md: str, md5: bytes, content_cache: dict):
         'codehilite': {
             'linenums': True,
             'guess_lang': False
+        },
+        'markdown_katex': {
+            'insert_fonts_css': False
         }
     })
     html = convert.convert(md)
