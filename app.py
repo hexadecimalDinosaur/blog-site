@@ -87,7 +87,7 @@ def article(slug):
     except FileNotFoundError:
         abort(404)
     data = articles[slug]
-    return render_template('article.html', title=data['title'], date=data['date'], content=html, slug=slug)
+    return render_template('article.html', title=data['title'], date=data['date'], content=html, slug=slug, description=data.get("description"))
 
 
 @app.route('/reference/<slug>/')

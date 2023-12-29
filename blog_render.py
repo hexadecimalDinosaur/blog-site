@@ -15,7 +15,11 @@ def to_html(md: str, md5: bytes, content_cache: dict):
         },
         'markdown_katex': {
             'insert_fonts_css': False
-        }
+        },
+        'mdx_truly_sane_lists': {
+            'nested_indent': 2,
+            'truly_sane': True,
+        },
     })
 
 
@@ -28,7 +32,11 @@ def to_html_toc(md: str, md5: bytes, content_cache: dict):
         },
         'markdown_katex': {
             'insert_fonts_css': False
-        }
+        },
+        'mdx_truly_sane_lists': {
+            'nested_indent': 2,
+            'truly_sane': True,
+        },
     })
     html = convert.convert(md)
     soup = BeautifulSoup(html, 'html.parser')
@@ -47,7 +55,11 @@ def to_html_noclass(md: str, md5: bytes, content_cache: dict):
             'linenums': True,
             'guess_lang': False,
             'noclasses': True
-        }
+        },
+        'mdx_truly_sane_lists': {
+            'nested_indent': 2,
+            'truly_sane': True,
+        },
     })
 
 
