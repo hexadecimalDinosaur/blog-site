@@ -112,6 +112,8 @@ menu[role="tablist"] {
     border: 1px solid #aaaaaa;
     border-collapse: collapse;
     border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
 }
 .main thead, .main tr, .main th, .main td {
     border: 1px solid #aaaaaa;
@@ -135,6 +137,13 @@ menu[role="tablist"] > li[aria-selected="true"] {
     background: var(--custom-bg);
 }
 
+article {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+article small {
+    font-size: 11px;
+}
 article img {
 	max-width: 100%;
 }
@@ -148,6 +157,7 @@ article blockquote {
     width: fit-content;
     background: #f0f0f0;
     border-radius: 3px;
+    margin-bottom: 3px;
 }
 
 article code {
