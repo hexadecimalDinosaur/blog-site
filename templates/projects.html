@@ -41,7 +41,7 @@
 {#    </div><br>#}
 
     <div class="row">
-        {% for item in projects %}
+        {% for item in projects if not item.archived %}
             <div class="project {% if item.archived %} archived{% endif %}"  style="{% if item.archived %}display: none{% endif %}">
                 <h3>{{ item.name }}{% if item.archived %} <i class="icon-archive" title="Archived"></i>{% endif %}</h3>
 {#                {% if item.image is defined %}<img class="card-image" src="{{ url_for('static',filename=('assets/'+item.image)) }}">{% endif %}#}
